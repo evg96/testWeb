@@ -17,18 +17,53 @@
             color: var(--tg-theme-text-color);
             background-color: var(--tg-theme-bg-color);
         }
+        #main{
+            display: block;
+        }
+        #form{
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div id="main">
         <h1>Сеть автомоек</h1>
         <img src="./car.jpg" alt="">
-        <div>
+        <!-- <div>
             <input type="text" placeholder="time">
-        </div>
+        </div> -->
         <div>Lorem ipsum, dolor sit amet consectetur adipisicing</div>
-        <button id="buy">Записаться</button>
+        <button id="order">Записаться</button>
     </div>
+    <form id="form">
+        <div>
+            <input type="text" placeholder="Имя" id="user_name">
+        </div>
+        <div>
+            <input type="text" placeholder="Телефон" id="user_phone">
+        </div>
+        <div>
+            <input type="text" placeholder="Тип мойки" id="type">
+        </div>
+        <div>
+            <input type="text" placeholder="Время" id="time">
+        </div>
+        <button id="buy">Записаться</button>
+    </form>
+
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let order = document.getElementById('order');
+        let username = document.getElementById('user_name');
+        let phone = document.getElementById('user_phone');
+        let type = document.getElementById('type');
+        let time = document.getElementById('time');
+
+        order.addEventListener("click", () =>{
+            document.getElementById("main").style.display = "none";
+            document.getElementById("form").style.display = "block";
+        });
+    </script>
 </body>
 </html>
