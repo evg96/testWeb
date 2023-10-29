@@ -55,6 +55,8 @@
     <script>
         let tg = window.Telegram.WebApp;
         let order = document.getElementById('order');
+        let buy = document.getElementById('buy');
+
         let username = document.getElementById('user_name');
         let phone = document.getElementById('user_phone');
         let type = document.getElementById('type');
@@ -63,7 +65,13 @@
         order.addEventListener("click", () =>{
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
+            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
         });
+
+        buy.addEventListener("click", () =>{
+            tg.close();
+        })
+
     </script>
 </body>
 </html>
