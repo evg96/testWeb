@@ -62,6 +62,8 @@
         let type = document.getElementById('type');
         let time = document.getElementById('time');
 
+        tg.expand();
+
         order.addEventListener("click", () =>{
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
@@ -69,6 +71,14 @@
         });
 
         buy.addEventListener("click", () =>{
+            let data = {
+                name: username.value,
+                phone: phone.value,
+                type: type.value,
+                time: time.value,
+            }
+            tg.sendData(JSON.stringify(data));
+
             tg.close();
         })
 
