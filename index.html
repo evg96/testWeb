@@ -1,91 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body{
-            font-family: sans-serif;
-            font-weight: 200;
-            color: var(--tg-theme-text-color);
-            background-color: var(--tg-theme-bg-color);
-        }
-        #main{
-            display: block;
-        }
-        #form{
-            display: none;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Автомойка</title>
+    <!-- Подключение CSS файла bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="styles/style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="main">
-        <h1>Сеть автомоек</h1>
-        <img src="./car.jpg" alt="">
-        <!-- <div>
-            <input type="text" placeholder="time">
-        </div> -->
-        <div>Lorem ipsum, dolor sit amet consectetur adipisicing</div>
-        <button id="order">Записаться</button>
-    </div>
-    <form id="form">
-        <div>
-            <input type="text" placeholder="Имя" id="user_name">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Услуги</h3>
+                </div>
+            </div>
         </div>
-        <div>
-            <input type="text" placeholder="Телефон" id="user_phone">
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="card" style="height: 15rem;">
+                        <img src="img/photo1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Мойка автомобиля</h5>
+                            <p class="card-text"></p>
+                            <a href="#" class="btn btn-primary">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 15rem;">
+                        <img src="img/photo1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Детейлинг</h5>
+                            <p class="card-text"></p>
+                            <a href="#" class="btn btn-primary">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" style="height: 15rem;">
+                        <img src="img/photo1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Шиномонтаж</h5>
+                            <p class="card-text"></p>
+                            <a href="#" class="btn btn-primary">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <input type="text" placeholder="Тип мойки" id="type">
+    </section>
+ 
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a href="" target="_blank" class="btn-outline-light">
+                        <i class="icon-youtube-play">footer</i>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div>
-            <input type="text" placeholder="Время" id="time">
-        </div>
-        <button id="buy">Записаться</button>
-    </form>
-
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        let tg = window.Telegram.WebApp;
-        let order = document.getElementById('order');
-        let buy = document.getElementById('buy');
-
-        let username = document.getElementById('user_name');
-        let phone = document.getElementById('user_phone');
-        let type = document.getElementById('type');
-        let time = document.getElementById('time');
-
-        tg.expand();
-
-        order.addEventListener("click", () =>{
-            document.getElementById("main").style.display = "none";
-            document.getElementById("form").style.display = "block";
-            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
-        });
-
-        buy.addEventListener("click", () =>{
-            let username = document.getElementById('user_name');
-            let phone = document.getElementById('user_phone');
-            let type = document.getElementById('type');
-            let time = document.getElementById('time');
-            let data = {
-                name: username.value,
-                phone: phone.value,
-                type: type.value,
-                time: time.value,
-            }
-            tg.sendData(JSON.stringify(data));
-
-            tg.close();
-        })
-
-    </script>
+    </footer>
+    <!-- Подключение JS файла bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
