@@ -71,6 +71,10 @@
         });
 
         buy.addEventListener("click", () =>{
+            let username = document.getElementById('user_name');
+            let phone = document.getElementById('user_phone');
+            let type = document.getElementById('type');
+            let time = document.getElementById('time');
             let data = {
                 name: username.value,
                 phone: phone.value,
