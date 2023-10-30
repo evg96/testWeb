@@ -3,13 +3,15 @@ section{
 }
 
 header{
-    background: --tg-theme-bg-color;
+    color: var(--tg-theme-text-color);
+    background-color: var(--tg-theme-bg-color);
     padding: 10px 0;
     text-align: center;
 }
 
 footer{
-    background: --tg-theme-bg-color;
+    color: var(--tg-theme-text-color);
+    background-color: var(--tg-theme-bg-color);
     padding: 30px 0;
 }
 
