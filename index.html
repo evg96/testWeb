@@ -11,22 +11,26 @@
 <body>
     <header>
         <div class="container">
-            <div class="row">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                      Выбрать услугу
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                      <li><button class="dropdown-item" type="button" id="cleaning">Мойка</button></li>
-                      <li><button class="dropdown-item" type="button" id="remont">Ремонт</button></li>
-                    </ul>
-                </div>
+            <span>Название мойки</span>
+            <div class="row nav-fill">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <!-- <button class="btn btn-primary">Мойка</button> -->
+                      <a class="nav-link active" id="washing" aria-current="page" href="#">Мойка</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="car_s" href="#">Автосервис</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="tire_s" href="#">Шиномонтаж</a>
+                    </li>
+                  </ul>
             </div>
         </div>
     </header>
     <section>
         <div class="container">
-            <div id="cl">
+            <div id="car_washing">
                 <div class="row">
                     <div class="col-6">
                         <div class="card" style="height: 15rem;">
@@ -60,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            <div id="mon" style="display: none;">
+            <div id="car_service" style="display: none;">
                 <div class="row">
                     <div class="col-6">
                         <div class="card" style="height: 15rem;">
@@ -114,7 +118,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
  
@@ -124,7 +127,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <a href="" target="_blank" class="btn-outline-light">
-                        <i class="icon-youtube-play">footer</i>
+                        <i class="icon-youtube-play">tgService.ru</i>
                     </a>
                 </div>
             </div>
