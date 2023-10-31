@@ -3,8 +3,6 @@
 
 
 function init(){
-    const orderModal = new bootstrap.Modal(document.querySelector('#main-modal'));
-    orderModal.show();
     selectService();
     // openOrderPage();
     window.addEventListener("load", init);
