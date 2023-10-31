@@ -17,8 +17,8 @@ footer{
     margin: 10px 0;
 }
 
-.cst-card{
-    min-height: 170.5px;
+.card{
+    height: 17rem;
 }
 
 .cst-nav{
