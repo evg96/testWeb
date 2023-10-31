@@ -1,12 +1,18 @@
 
+// import { MakeOrder } from "./make_order";
+
+
 function init(){
+    const orderModal = new bootstrap.Modal(document.querySelector('#main-modal'));
+    orderModal.show();
     selectService();
+    // openOrderPage();
     window.addEventListener("load", init);
 }
 
 function selectService(){
     const carService = document.getElementById('car_s')
-    car_s.addEventListener("click", () =>{
+    carService.addEventListener("click", () =>{
         document.getElementById("car_s").classList.add("active");
         document.getElementById("washing").classList.remove("active")
         document.getElementById("tire_s").classList.remove("active")
@@ -34,22 +40,53 @@ function selectService(){
         // document.getElementById("tire_service").style.display = "block";
         document.getElementById("car_service").style.display = "none";
     })
+}
 
+// function openOrderPage(){
+//     const mOrder = document.getElementById('m_order')
+//     mOrder.addEventListener("click", () =>{
+//         mOrder.dats
+//         const modalWindow = MakeOrder();
+//         document.body.innerHTML(modalWindow);
+//         console.log(modalWindow);
+//     });
+// }
 
-    // const car_s = document.getElementById('car_s')
-    // car_s.addEventListener("click", () =>{
-    //     console.log("car s");
-    // });
+// function openOrderPage(){
+//     document.addEventListener('DOMContentLoaded', function() {
+        
+//         // получим кнопку id="btn" с помощью которой будем открывать модальное окно
+//         const btn = document.querySelector('#btn');
+//         // активируем контент id="modal" как модальное окно
+//         const modal = new bootstrap.Modal(document.querySelector('#modal'));
+//         // при нажатии на кнопку
+//         btn.addEventListener('click', function() {
+//           // открываем модальное окно
+//           console.log("tup tup tup tup");
+//         //   modal.show();
+//         });
+      
+//       });
+// }
 
-    // const washing = document.getElementById('washing')
-    // cl.addEventListener("click", () =>{
-    //     document.getElementById("cl").style.display = "block";
-    //     document.getElementById("mon").style.display = "none";
-    // })
-
-    // const tire_s = document.getElementById('remont')
-    // shin.addEventListener("click", () =>{
-    //     document.getElementById("mon").style.display = "block";
-    //     document.getElementById("cl").style.display = "none";
-    // })
+function MakeOrder () {
+    return `
+        <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Заголовок модального окна</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <p>Здесь идет основной текст модального окна</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary">Сохранить изменения</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    `
 }
