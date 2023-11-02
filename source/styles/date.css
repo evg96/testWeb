@@ -1,0 +1,22 @@
+
+
+.date {
+    display: flex;
+    overflow-x: scroll;
+    
+    max-width: 50rem;
+    margin: 0 auto;
+}
+  
+.date p {
+    font-family: sans-serif;
+    
+    border-radius: 8px;
+    background: #ff6961;
+    color: white;
+    
+    padding: 2rem 3rem;
+    margin: 2rem 1rem;
+}
+  
+  
