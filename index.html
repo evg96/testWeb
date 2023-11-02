@@ -12,17 +12,17 @@
 <body>
     <header>
         <div class="container">
-            <span>Название мойки</span>
+            <!-- <div>
+                <span>Салон красоты</span>
+            </div> -->
+            
             <div class="row nav-fill">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                      <a class="nav-link active" id="washing" aria-current="page" href="#">Мойка</a>
+                      <a class="nav-link active" id="services" href="#">Услуги</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" id="car_s" href="#">Автосервис</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" id="tire_s" href="#">Шиномонтаж</a>
+                      <a class="nav-link" id="masters" href="#">Мастера</a>
                     </li>
                   </ul>
             </div>
@@ -30,95 +30,176 @@
     </header>
     <section>
         <div class="container">
-            <div id="car_washing">
+            <div id="master-list" style="display: none;">
                 <div class="row">
-                    <div class="col-6 ">
-                        <div class="card">
-                            <img src="img/photo1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body col-12">
-                                <h6 class="card-title">Мойка</h6>
-                                <p class="card-text">900 руб</p>
-                                <button type="button" class="btn btn-primary col-8">Запись</button>
-                                <!-- <a href="#" class="btn btn-primary" id="m_order">Записаться</a> -->
+                    <div class="col-12">
+                        <div class="card" role="button">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="./img/fingers.jpg" class="master-img" alt="">
+                                </div>
+                                <div class="col-10 provider_title">
+                                    <h6 class="card-title">Василиса</h6>
+                                    <p class="card-text">Мастер маникюра</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12">
                         <div class="card">
-                            <img src="img/salon.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">Детейлинг</h6>
-                                <p class="card-text">1500 руб</p>
-                                <button type="button" class="btn btn-primary" id="create-order" data-bs-toggle="modal" data-bs-target="#modal">Записаться</button>
-                                <!-- <a href="#" class="btn btn-primary">Записаться</a> -->
+                            <div class="row" role="button">
+                                <div class="col-2">
+                                    <img src="./img/master-women.jpg" class="master-img" alt="">
+                                </div>
+                                <div class="col-10 provider_title">
+                                    <h6 class="card-title">Вероника</h6>
+                                    <p class="card-text">Ресницы</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12">
                         <div class="card">
-                            <img src="img/pil.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">Пропылесосить салон</h6>
-                                <p class="card-text">500 руб</p>
-                                <a href="#" class="btn btn-primary">Записаться</a>
+                            <div class="row" role="button">
+                                <div class="col-2">
+                                    <img src="./img/barber.jpg" class="master-img" alt="">
+                                </div>
+                                <div class="col-10 provider_title">
+                                    <h6 class="card-title">Андрей</h6>
+                                    <p class="card-text">Барбер</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="row" role="button">
+                                <div class="col-2">
+                                    <img src="./img/master-men.jpg" class="master-img" alt="">
+                                </div>
+                                <div class="col-10 provider_title">
+                                    <h6 class="card-title">Сергей</h6>
+                                    <p class="card-text">Барбер</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="car_service" style="display: none;">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="card">
-                            <img src="img/maslo.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">Замена масла</h6>
-                                <p class="card-text">500 руб</p>
-                                <a href="#" class="btn btn-primary">Записаться</a>
-                            </div>
+            <div id="service-list">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                          Наши акции
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h6>Депиляция</h6>
+                                    <span class="price">300 руб.</span>
+                                    <label class="checkbox">
+                                        <input type="checkbox" />
+                                        <span class="primary"></span>
+                                    </label>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>Прокол ушей</h6>
+                                    <span class="price">1800 руб.</span>
+                                    <label class="checkbox">
+                                        <input type="checkbox" />
+                                        <span class="primary"></span>
+                                    </label>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>Консультация</h6>
+                                    <span class="price">0 руб.</span>
+                                    <label class="checkbox">
+                                        <input type="checkbox" />
+                                        <span class="primary"></span>
+                                    </label>
+                                </li>
+                            </ul>
                         </div>
+                      </div>
                     </div>
-                    <div class="col-6">
-                        <div class="card">
-                            <img src="img/sal-fil.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">Замена салонного фильтра</h6>
-                                <p class="card-text"></p>
-                                <a href="#" class="btn btn-primary">Записаться</a>
-                            </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                          Стрижки
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h6>Стрижка женская до 25 см</h6>
+                                    <span class="price">590 руб.</span>
+                                    <label class="checkbox">
+                                        <input type="checkbox" />
+                                        <span class="primary"></span>
+                                    </label>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>Стрижка женская от 25 см</h6>
+                                    <span class="price">1800 руб.</span>
+                                    <label class="checkbox">
+                                        <input type="checkbox" />
+                                        <span class="primary"></span>
+                                    </label>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>Стрижка мужская машинкой</h6>
+                                    <span class="price">490 руб.</span>
+                                    <label class="checkbox">
+                                        <input type="checkbox" />
+                                        <span class="primary"></span>
+                                    </label>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>Барбер стрижка мужская ножницами</h6>
+                                    <span class="price">790 руб.</span>
+                                    <label class="checkbox">
+                                        <input type="checkbox" />
+                                        <span class="primary"></span>
+                                    </label>
+                                </li>
+                            </ul>                      
                         </div>
+                      </div>
                     </div>
-                    <div class="col-6">
-                        <div class="card">
-                            <img src="img/mas-fil.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">Замена масленного фильтра</h6>
-                                <p class="card-text"></p>
-                                <a href="#" class="btn btn-primary">Записаться</a>
-                            </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                          Маникюр и покрытие
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h6>Укрупление гелем</h6>
+                                    <span class="price">790 руб.</span>
+                                    <label class="checkbox">
+                                        <input type="checkbox" />
+                                        <span class="primary"></span>
+                                    </label>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>Снятие лака</h6>
+                                    <span class="price">130 руб.</span>
+                                    <label class="checkbox">
+                                        <input type="checkbox" />
+                                        <span class="primary"></span>
+                                    </label>
+                                </li>
+                            </ul>                      
                         </div>
+                      </div>
                     </div>
-                    <div class="col-6">
-                        <div class="card">
-                            <img src="img/motor.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">Технический осмотр</h6>
-                                <p class="card-text"></p>
-                                <a href="#" class="btn btn-primary">Записаться</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="card">
-                            <img src="img/error.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title">Проверка ошибок</h6>
-                                <p class="card-text"></p>
-                                <a href="#" class="btn btn-primary">Записаться</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  </div>               
             </div>
         </div>
     </section>
@@ -157,9 +238,14 @@
                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
                         <label class="form-check-label" for="flexSwitchCheckChecked">Добавить опицию № 3</label>
                     </div>
-                    <div class="col-8">
-                        <button class="btn btn-primary">Записаться</button>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <button class="btn btn-primary">Записаться</button>
+                        </div>
+                        <div class="col-4"></div>
                     </div>
+
                     
                     <!-- <button class="btn btn-primary col-8">Записаться</button> -->
                 </div>
@@ -175,12 +261,12 @@
             </div>
         </div>
     </div>
-    <script>
+    <!-- <script>
         document.querySelector('#create-order').onclick = () =>{
             const orderModal = new bootstrap.Modal(document.querySelector('#main-modal'));
             orderModal.show();
         }
-    </script>
+    </script> -->
     <!-- Подключение JS файла bootstrap 5 -->
     <script src="script/script.js"></script>
     <script>init()</script>

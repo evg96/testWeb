@@ -1,7 +1,7 @@
 
 // import { MakeOrder } from "./make_order";
 
-
+// selectService();
 function init(){
     selectService();
     // openOrderPage();
@@ -9,34 +9,20 @@ function init(){
 }
 
 function selectService(){
-    const carService = document.getElementById('car_s')
-    carService.addEventListener("click", () =>{
-        document.getElementById("car_s").classList.add("active");
-        document.getElementById("washing").classList.remove("active")
-        document.getElementById("tire_s").classList.remove("active")
-        document.getElementById("car_washing").style.display = "none";
-        // document.getElementById("tire_service").style.display = "none";
-        document.getElementById("car_service").style.display = "block";
+    const masters = document.getElementById('masters')
+    masters.addEventListener("click", () =>{
+        masters.classList.add("active");
+        document.getElementById("services").classList.remove("active")
+        document.getElementById("master-list").style.display = "block";
+        document.getElementById("service-list").style.display = "none";
     });
 
-    const washing = document.getElementById('washing')
-    washing.addEventListener("click", () =>{
-        document.getElementById("washing").classList.add("active");
-        document.getElementById("car_s").classList.remove("active")
-        document.getElementById("tire_s").classList.remove("active")
-        document.getElementById("car_washing").style.display = "block";
-        // document.getElementById("tire_service").style.display = "none";
-        document.getElementById("car_service").style.display = "none";
-    })
-
-    const tireService = document.getElementById('tire_s')
-    tireService.addEventListener("click", () =>{
-        document.getElementById("tire_s").classList.add("active");
-        document.getElementById("washing").classList.remove("active")
-        document.getElementById("car_s").classList.remove("active")
-        document.getElementById("car_washing").style.display = "none";
-        // document.getElementById("tire_service").style.display = "block";
-        document.getElementById("car_service").style.display = "none";
+    const services = document.getElementById('services')
+    services.addEventListener("click", () =>{
+        document.getElementById("masters").classList.remove("active");
+        services.classList.add("active")
+        document.getElementById("master-list").style.display = "none";
+        document.getElementById("service-list").style.display = "block";
     })
 }
 
@@ -67,24 +53,24 @@ function selectService(){
 //       });
 // }
 
-function MakeOrder () {
-    return `
-        <div class="modal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Заголовок модального окна</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-            </div>
-            <div class="modal-body">
-                <p>Здесь идет основной текст модального окна</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                <button type="button" class="btn btn-primary">Сохранить изменения</button>
-            </div>
-            </div>
-        </div>
-        </div>
-    `
-}
+// function MakeOrder () {
+//     return `
+//         <div class="modal" tabindex="-1">
+//         <div class="modal-dialog">
+//             <div class="modal-content">
+//             <div class="modal-header">
+//                 <h5 class="modal-title">Заголовок модального окна</h5>
+//                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+//             </div>
+//             <div class="modal-body">
+//                 <p>Здесь идет основной текст модального окна</p>
+//             </div>
+//             <div class="modal-footer">
+//                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+//                 <button type="button" class="btn btn-primary">Сохранить изменения</button>
+//             </div>
+//             </div>
+//         </div>
+//         </div>
+//     `
+// }
