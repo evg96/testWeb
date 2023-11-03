@@ -1,4 +1,6 @@
-
+body{
+    background-color: white;
+}
 
 .date {
     display: flex;
@@ -7,16 +9,37 @@
     max-width: 50rem;
     margin: 0 auto;
 }
+
+.time{
+    padding: 50px 10px;
+}
   
 .date p {
     font-family: sans-serif;
-    
     border-radius: 8px;
-    background: #ff6961;
-    color: white;
-    
-    padding: 2rem 3rem;
-    margin: 2rem 1rem;
+    background: #f6f6f6;
+    color: black;
+    padding: 1.8rem 1.7rem;
+    margin: 15px 10px;
+}
+
+.date p:hover{
+    background: #b4b3b3;
 }
   
-  
+.choose_time{
+    font-family: sans-serif;
+    border-radius: 8px;
+    background: #f6f6f6;
+    color: black;
+    padding: 0.5rem 0.5rem;
+    /* margin: 15px 10px; */
+}
+
+.choose_time:hover{
+    background: #b4b3b3;
+}
+
+.unavailable{
+    color: #b4b3b3;
+}
