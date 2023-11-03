@@ -7,26 +7,35 @@ body{
     overflow-x: scroll;
     
     max-width: 50rem;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .time{
     padding: 50px 10px;
 }
+
+.date div {
+    font-family: sans-serif;
+    border-radius: 8px;
+    background: #f6f6f6;
+    color: black;
+    padding: 0rem 0.9rem;
+    margin: 0 5px;
+}
   
-.date p {
+/* .date p {
     font-family: sans-serif;
     border-radius: 8px;
     background: #f6f6f6;
     color: black;
     padding: 1.8rem 1.7rem;
     margin: 15px 10px;
-}
+} */
 
-.date p:hover{
+/* .date p:hover{
     background: #b4b3b3;
 }
-  
+   */
 .choose_time{
     font-family: sans-serif;
     border-radius: 8px;
@@ -42,4 +51,12 @@ body{
 
 .unavailable{
     color: #b4b3b3;
+}
+
+.weekend{
+    color: red;
+}
+
+.day{
+    margin: 10px 0;
 }
