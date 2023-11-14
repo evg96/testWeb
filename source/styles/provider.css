@@ -1,0 +1,31 @@
+.card_btn{
+    border: 1px solid black;
+    border-radius: 5px;
+    float: left;
+    width: 85%;
+    /* padding: 7.5%; */
+    margin: 10px 7.5% 10px 7.5%;
+}
+
+.card_btn:hover{
+    background-color: rgb(233, 229, 229);
+}
+
+.card_btn:active{
+    background-color: rgb(197, 192, 192);
+}
+
+.card_btn img{
+    height: 60px;
+    width: 60px;
+    border-radius: 70px;
+    float: left;
+    margin: 10px;
+    /* margin-left: 10px; */
+}
+
+.info{
+    float: left;
+    width: 60%;
+    padding: 15px 5px 0 0;
+}

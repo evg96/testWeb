@@ -1,0 +1,70 @@
+body{
+    background-color: white;
+}
+
+.date {
+    display: flex;
+    overflow-x: scroll;
+    
+    max-width: 50rem;
+    margin: 20px auto;
+}
+
+.time{
+    padding: 10px 10px;
+}
+
+.date div {
+    /* width: 50rem; */
+    /* height: 70px; */
+    font-family: sans-serif;
+    border-radius: 10px;
+    background: #f6f6f6;
+    color: black;
+    padding: 0 20px;
+    /* padding: 0rem 0.9rem; */
+    margin: 0 5px;
+}
+  
+/* .date p {
+    font-family: sans-serif;
+    border-radius: 8px;
+    background: #f6f6f6;
+    color: black;
+    padding: 1.8rem 1.7rem;
+    margin: 15px 10px;
+} */
+
+/* .date p:hover{
+    background: #b4b3b3;
+}
+   */
+.choose_time{
+    /* width: 60px; */
+    font-family: sans-serif;
+    border-radius: 10px;
+    background: #f6f6f6;
+    color: black;
+    padding: 0.7rem 0.7rem;
+    /* margin: 15px 10px; */
+}
+
+.choose_time:hover{
+    background: #b4b3b3;
+}
+
+.unavailable{
+    color: #b4b3b3;
+}
+
+.weekend{
+    color: red;
+}
+
+.day{
+    margin: 10px 0 0 0;
+}
+
+.time-of-day{
+    padding: 10px 0 5px 0;
+}
