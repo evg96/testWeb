@@ -1,7 +1,7 @@
 import { displayServicesGroups, displayServices } from './services.js';
 import { expandAccord, listEvent } from './elements/accordeon.js';
 
-await fetch('http://92.53.107.61:8080/salon/Tsirulnik-Khimki-1')
+await fetch('https://92.53.107.61:8080/salon/Tsirulnik-Khimki-1')
 .then((response) => response.json())
 .then((datas) => {
     displayServicesGroups(datas);
@@ -10,7 +10,7 @@ await fetch('http://92.53.107.61:8080/salon/Tsirulnik-Khimki-1')
         ids += `${data.id},`
     }
     ids = ids.substring(0, ids.length - 1);  // delete last comma
-    fetch(`http://92.53.107.61:8080/salon/Tsirulnik-Khimki-1/service?servgroup=${ids}`)
+    fetch(`https://92.53.107.61:8080/salon/Tsirulnik-Khimki-1/service?servgroup=${ids}`)
     .then((respons)=> respons.json())
     .then((services) => {
         displayServices(services);
