@@ -24,6 +24,7 @@ let tg = window.Telegram.WebApp;
 // let event = document.getElementById('test_event');
 
 tg.MainButton.text = 'test';
+tg.MainButton.isVisible = true;
 tg.MainButton.enable();
 
 
