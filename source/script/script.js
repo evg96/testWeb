@@ -15,7 +15,7 @@ tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются в�
 
 const masters = document.getElementById('btn_1')
 masters.addEventListener('click', function(){ 
-    console.log('btn');
+    // console.log('btn');
 	if (tg.MainButton.isVisible){ //если кнопка показана 
 		tg.MainButton.hide() //скрываем кнопку 
 	}
