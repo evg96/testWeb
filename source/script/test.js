@@ -21,3 +21,6 @@ masters.addEventListener('click', function(){
   	tg.MainButton.show() //показываем 
   }
 });
+
+var paramsString = document.location.search;
+console.log(paramsString);
