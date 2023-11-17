@@ -14,7 +14,7 @@ tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунд�
 tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры 
 
 
-btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+btn_1.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
 	if (tg.MainButton.isVisible){ //если кнопка показана 
 		tg.MainButton.hide() //скрываем кнопку 
 	}
