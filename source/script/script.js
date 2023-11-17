@@ -1,7 +1,8 @@
 import { displayServicesGroups, displayServices } from './services.js';
 import { expandAccord, listEvent } from './elements/accordeon.js';
 
-await fetch('https://telegram-client-services.ru/app/salon/Tsirulnik-Khimki-1')
+// await fetch('https://telegram-client-services.ru/app/salon/Tsirulnik-Khimki-1')
+await fetch('/app/salon/Tsirulnik-Khimki-1')
 .then((response) => response.json())
 .then((datas) => {
     displayServicesGroups(datas);
