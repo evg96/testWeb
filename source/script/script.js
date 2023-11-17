@@ -20,17 +20,11 @@ await fetch('https://telegram-client-services.ru/salon/Tsirulnik-Khimki-1')
 })
 
 let tg = window.Telegram.WebApp;
-tg.expand();
 
-let event = document.getElementById('test_event');
+// let event = document.getElementById('test_event');
 
-event.addEventListener('click', () => {
-    alert('bye');
-    tg.close();
-});
-
-alert(tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.username);
-
+tg.MainButton.text = 'test';
+tg.MainButton.enable();
 
 
 // function selectService(){
