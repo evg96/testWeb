@@ -22,5 +22,4 @@ masters.addEventListener('click', function(){
   }
 });
 
-var paramsString = document.location.search;
-console.log(paramsString);
+console.log("href", window.location.href);
