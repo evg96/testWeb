@@ -13,8 +13,8 @@ tg.MainButton.textColor = "#F55353"; //изменяем цвет текста к
 tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры 
 
-
-btn_1.addEventListener('click', function(){ 
+const masters = document.getElementById('btn_1')
+masters.addEventListener('click', function(){ 
     console.log('btn');
 	if (tg.MainButton.isVisible){ //если кнопка показана 
 		tg.MainButton.hide() //скрываем кнопку 
