@@ -1,6 +1,16 @@
 import { displayServicesGroups, displayServices } from './services.js';
 import { expandAccord, listEvent } from './elements/accordeon.js';
 
+
+
+let tg = window.Telegram.WebApp;
+
+// let event = document.getElementById('test_event');
+
+tg.MainButton.text = 'test';
+tg.MainButton.isVisible = true;
+tg.MainButton.enable();
+
 await fetch('https://telegram-client-services.ru/salon/Tsirulnik-Khimki-1')
 .then((response) => response.json())
 .then((datas) => {
@@ -19,13 +29,7 @@ await fetch('https://telegram-client-services.ru/salon/Tsirulnik-Khimki-1')
     })
 })
 
-let tg = window.Telegram.WebApp;
 
-// let event = document.getElementById('test_event');
-
-tg.MainButton.text = 'test';
-tg.MainButton.isVisible = true;
-tg.MainButton.enable();
 
 
 // function selectService(){
