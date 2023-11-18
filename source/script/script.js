@@ -1,42 +1,45 @@
 import { displayServicesGroups, displayServices } from './services.js';
 import { expandAccord, listEvent } from './elements/accordeon.js';
+import { showEmployee } from './elements/employee_card.js';
 
-// await fetch('https://telegram-client-services.ru/app/salon/Tsirulnik-Khimki-1')
-await fetch('./app/salon/Tsirulnik-Khimki-1-test')
-.then((response) => response.json())
-.then((datas) => {
-    displayServicesGroups(datas);
-    let ids = '';
-    for (let data of datas){
-        ids += `${data.id},`
-    }
-    ids = ids.substring(0, ids.length - 1);  // delete last comma
-    fetch(`https://telegram-client-services.ru/app/salon/Tsirulnik-Khimki-1/service?servgroup=${ids}`)
-    .then((respons)=> respons.json())
-    .then((services) => {
-        displayServices(services);
-        expandAccord();
-        listEvent();
+
+const slectService = document.querySelector('#btn-service')
+const slectProvider = document.querySelector('#btn-provider')
+
+slectService.addEventListener('click', function(){
+    let main = document.querySelector('main');
+    
+    main.innerHTML = `<div class="srv-container">
+                        <div id="service-list">
+                            <div class="accordion" id="accordion">
+                            </div>               
+                        </div>
+                    </div>`;
+    fetch('./app')
+    .then((response) => response.json())
+    .then((datas) => {
+        displayServicesGroups(datas);
+        let ids = '';
+        for (let data of datas){
+            ids += `${data.id},`
+        }
+        ids = ids.substring(0, ids.length - 1);  // delete last comma
+        fetch(`./app/service?servgroup=${ids}`)
+        .then((respons)=> respons.json())
+        .then((services) => {
+            displayServices(services);
+            expandAccord();
+            listEvent();
+        })
     })
-})
+});
 
-
-
-
-// function selectService(){
-//     const masters = document.getElementById('masters')
-//     masters.addEventListener("click", () =>{
-//         masters.classList.add("active");
-//         document.getElementById("services").classList.remove("active")
-//         document.getElementById("master-list").style.display = "block";
-//         document.getElementById("service-list").style.display = "none";
-//     });
-
-//     const services = document.getElementById('services')
-//     services.addEventListener("click", () =>{
-//         document.getElementById("masters").classList.remove("active");
-//         services.classList.add("active")
-//         document.getElementById("master-list").style.display = "none";
-//         document.getElementById("service-list").style.display = "block";
-//     })
-// }
+slectProvider.addEventListener('click', function(){
+    let main = document.querySelector('main');
+    fetch('./app/employee')
+    .then((response) => response.json())
+    .then((datas) => {
+        const content = showEmployee(datas);
+        main.innerHTML = content;
+    });
+});
