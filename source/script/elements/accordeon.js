@@ -26,8 +26,14 @@ export function listEvent(){
             checkbox.checked == true ? checkbox.checked = false : checkbox.checked = true;
             let changePrice = getPrice(priceSelector.innerHTML);
             checkbox.checked == true ? price += changePrice : price -= changePrice;
+            if (price > 0){
+                tg.MainButton.setText("total price", price);
+                tg.MainButton.show();
+            }else{
+                tg.MainButton.hide()
+            }
             console.log("total price", price);
-            tg.MainButton.setText("total price", price)
+            
         })
     }
 }
