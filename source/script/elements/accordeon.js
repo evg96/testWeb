@@ -1,4 +1,4 @@
-
+import { initTG } from '../telegram.js'
 export function expandAccord(){ 
     let coll = document.getElementsByClassName('collapsible');
 
@@ -18,6 +18,7 @@ export function expandAccord(){
 export function listEvent(){
     let coll = document.getElementsByClassName('information');
     let price = 0;
+    let tg = initTG;
     for(let i = 0; i < coll.length; i++){
         coll[i].addEventListener('click', function(){
             let checkbox = coll[i].querySelector('[class=checkboxstyle]');
@@ -26,6 +27,7 @@ export function listEvent(){
             let changePrice = getPrice(priceSelector.innerHTML);
             checkbox.checked == true ? price += changePrice : price -= changePrice;
             console.log("total price", price);
+            tg.MainButton.setText("total price", price)
         })
     }
 }

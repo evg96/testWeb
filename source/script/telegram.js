@@ -7,15 +7,20 @@
 	export const appPath = 'app' + salonName
 
 
-let tg = window.Telegram.WebApp;
+export function initTG(){
+	let tg = window.Telegram.WebApp;
 
-tg.expand(); //расширяем на все окно  
+	tg.expand(); //расширяем на все окно  
+	
+	// tg.MainButton.text = "Changed Text"; //изменяем текст кнопки 
+	// tg.MainButton.setText(tg.initDataUnsafe.user.id); //изменяем текст кнопки иначе
+	tg.MainButton.textColor = "#0a0a0a"; //изменяем цвет текста кнопки
+	tg.MainButton.color = "#8dcaee"; //изменяем цвет бэкграунда кнопки
+	tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
+	return tg;
+}
 
-tg.MainButton.text = "Changed Text"; //изменяем текст кнопки 
-tg.MainButton.setText(tg.initDataUnsafe.user.id); //изменяем текст кнопки иначе
-tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
-tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
-tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры 
+
 
 tg.BackButton.isVisible = true;
 tg.BackButton.show();
