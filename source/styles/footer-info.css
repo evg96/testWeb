@@ -5,10 +5,14 @@
 }
 
 .footer-price{
-    height: 50%;
+    height: 40%;
 }
 
 .select-provider{
     background-color: rgb(137, 181, 240);
-    height: 50%;
+    /* height: 50%; */
+    padding: 10px 0;
+    width: 70%;
+    margin: 0 15% 15px 15%;
+    border-radius: 10px;
 }
