@@ -27,7 +27,8 @@ export function listEvent(){
             let changePrice = getPrice(priceSelector.innerHTML);
             checkbox.checked == true ? price += changePrice : price -= changePrice;
             if (price > 0){
-                tg.MainButton.setText("total price", price);
+                const text = "total price " + price;
+                tg.MainButton.setText(text);
                 tg.MainButton.show();
             }else{
                 tg.MainButton.hide()
