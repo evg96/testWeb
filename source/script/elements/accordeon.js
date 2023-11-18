@@ -18,7 +18,7 @@ export function expandAccord(){
 export function listEvent(){
     let coll = document.getElementsByClassName('information');
     let price = 0;
-    let tg = initTG;
+    let tg = initTG();
     for(let i = 0; i < coll.length; i++){
         coll[i].addEventListener('click', function(){
             let checkbox = coll[i].querySelector('[class=checkboxstyle]');
