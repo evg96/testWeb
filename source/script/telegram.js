@@ -15,7 +15,8 @@ export function initTG(){
 	// tg.MainButton.text = "Changed Text"; //изменяем текст кнопки 
 	// tg.MainButton.setText(tg.initDataUnsafe.user.id); //изменяем текст кнопки иначе
 	tg.MainButton.textColor = "#0a0a0a"; //изменяем цвет текста кнопки
-	tg.MainButton.color = "#91cee6"; //изменяем цвет бэкграунда кнопки
+	// tg.MainButton.color = "#91cee6"; //изменяем цвет бэкграунда кнопки
+	tg.MainButton.color = "#ffff"; //изменяем цвет бэкграунда кнопки
 	tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
 	return tg;
 }
