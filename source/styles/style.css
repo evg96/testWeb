@@ -20,10 +20,12 @@ header{
 
 footer{
     background: --tg-theme-bg-color;
-    /* background-color: rgb(228, 220, 233); */
+    /* background: 1px rgb(211, 205, 214); */
     border-bottom: 1px rgb(211, 205, 214);
     font-size: 1.3em;
     text-align: center;
+    position: sticky;
+    bottom: 0;
 }
 
 .container{
