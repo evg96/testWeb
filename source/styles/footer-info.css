@@ -5,13 +5,27 @@
 }
 
 .footer-price{
+    float: left;
     height: 30%;
-    width: 90%;
-    /* margin: 0 5%; */
-    margin: 5px 5% 0 5%;
+    width: 86%;
+    margin: 5px 7% 0 7%;
+    font-size: 0.8em;
+}
+
+#sr{
+    float: left;
+    text-align: left;
+    width: 50%;
+}
+
+#pr{
+    float: right;
+    text-align: right;
+    width: 50%;
 }
 
 .select-provider{
+    float: left;
     background-color: rgb(137, 181, 240);
     /* height: 50%; */
     padding: 10px 0;

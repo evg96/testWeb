@@ -5,8 +5,8 @@ export function showFooter(services, price){
     const content = `
     <div class="footer-info">
         <div class="footer-price">
-            <span>${services} услуги</span>
-            <span>${price} руб.</span>
+            <span id="sr">Количество услуг: ${services}</span>
+            <span id="pr">${price} ₽</span>
         </div>
         <div class="select-provider" role="button">
             Выбрать мастера
@@ -37,3 +37,4 @@ export function hideFooter(){
     Выбрать мастера
 </div>
 </div> */}
+
