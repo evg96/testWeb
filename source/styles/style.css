@@ -19,13 +19,11 @@ header{
 }
 
 footer{
-    background: --tg-theme-bg-color;
-    /* background: 1px rgb(211, 205, 214); */
+    /* background: --tg-theme-bg-color; */
+    background: 1px white;
     border-bottom: 1px rgb(211, 205, 214);
     font-size: 1.3em;
     text-align: center;
-    position: sticky;
-    bottom: 0;
 }
 
 .container{

@@ -1,4 +1,5 @@
-import { initTG } from '../telegram.js'
+import { initTG } from '../telegram.js';
+import { showFooter, hideFooter } from './footer.js'
 export function expandAccord(){ 
     let coll = document.getElementsByClassName('collapsible');
 
@@ -18,6 +19,7 @@ export function expandAccord(){
 export function listEvent(){
     let coll = document.getElementsByClassName('information');
     let price = 0;
+    let services = 0;
     let tg = initTG();
     for(let i = 0; i < coll.length; i++){
         coll[i].addEventListener('click', function(){
@@ -25,14 +27,24 @@ export function listEvent(){
             let priceSelector = coll[i].querySelector('[class=price]');
             checkbox.checked == true ? checkbox.checked = false : checkbox.checked = true;
             let changePrice = getPrice(priceSelector.innerHTML);
-            checkbox.checked == true ? price += changePrice : price -= changePrice;
-            if (price > 0){
-                tg.MainButton.color = "#91cee6";
-                const text = "total price " + price;
-                tg.MainButton.setText(text);
-                tg.MainButton.show();
+            if (checkbox.checked){
+                price += changePrice;
+                services++
             }else{
-                tg.MainButton.hide()
+                price -= changePrice;
+                services--
+            }
+            // checkbox.checked == true ? price += changePrice;services++ : price -= changePrice;
+
+            if (price > 0){
+                showFooter(services, price);
+                // tg.MainButton.color = "#91cee6";
+                // const text = "total price " + price;
+                // tg.MainButton.setText(text);
+                // tg.MainButton.show();
+            }else{
+                hideFooter();
+                // tg.MainButton.hide()
             }
             console.log("total price", price);
             
