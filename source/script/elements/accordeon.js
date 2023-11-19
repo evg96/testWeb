@@ -1,4 +1,5 @@
-import { initTG } from '../telegram.js';
+// import { initTG } from '../telegram.js';
+import { showEmployee } from './employee_card.js';
 import { showFooter, hideFooter } from './footer.js'
 export function expandAccord(){ 
     let coll = document.getElementsByClassName('collapsible');
@@ -33,9 +34,11 @@ export function listEvent(){
                 price -= changePrice;
                 services--
             }
-
+            
             if (price > 0){
                 showFooter(services, price);
+                const element = document.querySelector('#btn-provider');
+                showEmployee(element);
             }else{
                 hideFooter();
             }

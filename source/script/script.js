@@ -1,6 +1,6 @@
 import { displayServicesGroups, displayServices } from './services.js';
 import { expandAccord, listEvent } from './elements/accordeon.js';
-import { showEmployee } from './elements/employee_card.js';
+import { genEmployee } from './elements/employee_card.js';
 
 
 const slectService = document.querySelector('#btn-service')
@@ -39,7 +39,8 @@ slectProvider.addEventListener('click', function(){
     fetch('./app/employee')
     .then((response) => response.json())
     .then((datas) => {
-        const content = showEmployee(datas);
+        const content = genEmployee(datas);
         main.innerHTML = content;
     });
 });
+

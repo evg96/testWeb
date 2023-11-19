@@ -1,6 +1,6 @@
-export function showEmployee(datas){
+import { showFooter, hideFooter } from './footer.js'
+export function genEmployee(datas){
     let content = ''
-    console.log(datas);
     for (let data of datas){
         content += createepmlCard(data);
     }
@@ -19,4 +19,18 @@ function createepmlCard(data){
     </div>
     </div>    
     `
+}
+
+
+export function showEmployee(element){
+    element.addEventListener('click', function(){
+        let main = document.querySelector('main');
+        fetch('./app/employee')
+        .then((response) => response.json())
+        .then((datas) => {
+            const content = genEmployee(datas);
+            main.innerHTML = content;
+            hideFooter();
+        });
+    });
 }

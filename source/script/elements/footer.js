@@ -8,7 +8,7 @@ export function showFooter(services, price){
             <span id="sr">Количество услуг: ${services}</span>
             <span id="pr">${price} ₽</span>
         </div>
-        <div class="select-provider" role="button">
+        <div class="select-provider" id="btn-provider" role="button">
             Выбрать мастера
         </div>
     </div>        
