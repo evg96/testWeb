@@ -15,7 +15,6 @@ export function displayServices(datas) {
         const element = document.querySelector(`#services_${data.serv_group}`);
         let services = '';
         for(let serv of data.services){
-            
             services += addServices(serv)
         }
         element.innerHTML = services;
@@ -33,7 +32,7 @@ function addServices(data){
     <div class="information" role="button">
         <input type="checkbox" class="checkboxstyle" disabled />
         <h6>${data.title}</h6>
-        <div class="description">
+        <div class="description" data-id="${data.id}">
             <span class="price">${data.price} руб</span>
             <span class="duration">${duration}</span>
         </div>

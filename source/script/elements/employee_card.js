@@ -1,4 +1,4 @@
-import { showFooter, hideFooter } from './footer.js'
+import { hideFooter } from './footer.js'
 export function genEmployee(datas){
     let content = ''
     for (let data of datas){
@@ -22,10 +22,16 @@ function createepmlCard(data){
 }
 
 
-export function showEmployee(element){
+export function showEmployee(element, servicesID){
+    let url = '';
+    if (servicesID != ""){
+        url = `./app/employee?skill=${servicesID}`
+    } else{
+        './app/employee'
+    }
     element.addEventListener('click', function(){
         let main = document.querySelector('main');
-        fetch('./app/employee')
+        fetch(url)
         .then((response) => response.json())
         .then((datas) => {
             const content = genEmployee(datas);

@@ -21,24 +21,32 @@ export function listEvent(){
     let coll = document.getElementsByClassName('information');
     let price = 0;
     let services = 0;
+    let ids = [];
     for(let i = 0; i < coll.length; i++){
         coll[i].addEventListener('click', function(){
-            let checkbox = coll[i].querySelector('[class=checkboxstyle]');
-            let priceSelector = coll[i].querySelector('[class=price]');
+            const id = coll[i].querySelector('[class=description]').dataset.id;
+            const checkbox = coll[i].querySelector('[class=checkboxstyle]');
+            const priceSelector = coll[i].querySelector('[class=price]');
             checkbox.checked == true ? checkbox.checked = false : checkbox.checked = true;
             let changePrice = getPrice(priceSelector.innerHTML);
             if (checkbox.checked){
                 price += changePrice;
                 services++
+                ids.push(id);
+                // console.log(ids.toString());
             }else{
                 price -= changePrice;
                 services--
+                const index = ids.indexOf(id);
+                ids.splice(index, 1);
+                // console.log(ids.toString());
             }
-            
+            // const a = [1, 10, 3, 2, 11]
+            // console.log(a.toString()) //1,10,3,2,11
             if (price > 0){
                 showFooter(services, price);
                 const element = document.querySelector('#btn-provider');
-                showEmployee(element);
+                showEmployee(element, ids.toString());
             }else{
                 hideFooter();
             }
