@@ -33,16 +33,12 @@ export function listEvent(){
                 price += changePrice;
                 services++
                 ids.push(id);
-                // console.log(ids.toString());
             }else{
                 price -= changePrice;
                 services--
                 const index = ids.indexOf(id);
                 ids.splice(index, 1);
-                // console.log(ids.toString());
             }
-            // const a = [1, 10, 3, 2, 11]
-            // console.log(a.toString()) //1,10,3,2,11
             if (price > 0){
                 showFooter(services, price);
                 const element = document.querySelector('#btn-provider');

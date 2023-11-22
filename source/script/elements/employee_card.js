@@ -1,15 +1,16 @@
-import { hideFooter } from './footer.js'
+import { hideFooter } from './footer.js';
+import { showDays } from './calendar.js';
 export function genEmployee(datas){
     let content = ''
     for (let data of datas){
-        content += createepmlCard(data);
+        content += createEpmlCard(data);
     }
     return content
 }
 
 
 
-function createepmlCard(data){
+function createEpmlCard(data){
     return `
     <div class="card_btn" role="button">
     <img src="${data.photo}" alt="">
@@ -37,6 +38,16 @@ export function showEmployee(element, servicesID){
             const content = genEmployee(datas);
             main.innerHTML = content;
             hideFooter();
+            date();
         });
     });
+}
+
+function date(){
+    let coll = document.getElementsByClassName('card_btn');
+    for(let i = 0; i < coll.length; i++){
+        coll[i].addEventListener('click', function(){
+            showDays()
+        })
+    }
 }
