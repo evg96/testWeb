@@ -12,7 +12,7 @@ export function genEmployee(datas){
 
 function createEpmlCard(data){
     return `
-    <div class="card_btn" role="button">
+    <div class="card_btn" role="button" data-emplid="${data.id}">
     <img src="${data.photo}" alt="">
     <div class="info">
         <span>${data.name}</span><br>
@@ -46,8 +46,9 @@ export function showEmployee(element, servicesID){
 function date(){
     let coll = document.getElementsByClassName('card_btn');
     for(let i = 0; i < coll.length; i++){
+        const emplID = coll[i].dataset.emplid;
         coll[i].addEventListener('click', function(){
-            showDays()
+            showDays(emplID)
         })
     }
 }
