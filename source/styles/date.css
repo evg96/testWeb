@@ -58,6 +58,10 @@
     background-color: blue;
 }
 
+.date-button:visited{
+    background-color: blue;
+}
+
 .date-button>div{
     margin-top: 8px;
 }
