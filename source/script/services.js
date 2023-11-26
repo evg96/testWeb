@@ -33,7 +33,7 @@ function addServices(data){
         <input type="checkbox" class="checkboxstyle" disabled />
         <h6>${data.title}</h6>
         <div class="description" data-id="${data.id}">
-            <span class="price">${data.price} руб</span>
+            <span class="price">${data.price} ₽</span>
             <span class="duration">${duration}</span>
         </div>
     </div>

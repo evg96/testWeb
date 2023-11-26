@@ -55,18 +55,3 @@ function createTimes(datas){
     }
     return content
 }
-
-
-{/* <div class="time">
-<div class="time-button" role="button">12:00</div>
-<div class="time-button" role="button">12:30</div>
-<div class="time-button" role="button">13:00</div>
-<div class="time-button" role="button">13:30</div>
-<div class="time-button" role="button">14:00</div>
-<div class="time-button" role="button">14:30</div>
-<div class="time-button" role="button">15:00</div>
-<div class="time-button" role="button">15:30</div>
-<div class="time-button" role="button">16:00</div>
-<div class="time-button" role="button">16:30</div>
-</div>
-<div class="time_day"> */}

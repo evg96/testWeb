@@ -1,0 +1,111 @@
+element {
+    /* --element-bg-color: #fff; */
+    --element-bg-color: red;
+    --radius: 10px;
+  }
+  
+
+
+body{
+    background-color: #f6f6f6;
+}
+
+.check-barber{
+    background-color: #fff;
+    width: 90%;
+    margin: 0 5%;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.barber-img{
+    float: left;
+    height: 60px;
+    width: 60px;
+    border-radius: 70px;
+    margin: 10px 0;
+    margin-right: 15px;
+}
+
+.check-barber p{
+    margin: 2.5px 0;
+    /* margin-left: 5px; */
+}
+
+.edit-icon{
+    width: 30px; 
+    height: 30px;
+    margin-top: 25px;
+    margin-left: 20%;
+}
+
+.check-date{
+    background-color: #fff;
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 15px;
+    min-height: 80px;
+    border-radius: 10px;
+}
+
+.major-check{
+    display: flex;
+    flex-direction: row;
+    min-height: 80px;
+    /* margin: 10px 0; */
+}
+
+.check-1{
+    flex-basis: 85%;
+    margin-left: 15px;
+}
+
+.check-2{
+    flex-basis: 15%;
+}
+    
+.check-services{
+    background-color: #fff;
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 15px;
+    min-height: 80px;
+    border-radius: 10px;
+}
+
+hr{
+    color: #f6f6f6;
+}
+    
+.additional-comment{
+    background-color: #fff;
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 15px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.additional-comment>div{
+    margin-left: 15px;
+    padding-top: 15px;
+}
+
+.additional-comment>div>input{
+    margin-top: 5px;
+    border: none;
+}
+
+.additional-comment>div>input:focus{
+    outline: none;
+}
+
+.title{
+    padding-bottom: 7px;
+    /* font-size: 1.2em; */
+    /* изменить шрифт */
+}
+
+.servive-info{
+    margin: 15px 0;
+}
