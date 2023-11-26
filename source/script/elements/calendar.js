@@ -3,9 +3,11 @@ function createDays(datas){
     for(let data of datas){
         content += `
         <div class="date-button" role="button" data-dayid="${data.id}">
-            <span>${data.week}</span>
-            <br>
-            <span>${data.day}</span>
+            <div>
+                <span>${data.week}</span>
+                <br>
+                <span>${data.day}</span>
+            </div> 
         </div>         
         `
     }
@@ -48,10 +50,67 @@ function showTime(emplID){
 
 function createTimes(datas){
     let content = ''
-    for(let data of datas){
-        content += `
-        <div class="time-button" role="button">${data.time}</div>
-        `
-    }
+    content += genByTime(datas, 'morning');
+    content += genByTime(datas, 'afternoon');
+    content += genByTime(datas, 'night');
+    // for(let data of datas){
+    //     content += `
+    //     <div class="time-button" role="button">${data.time}</div>
+    //     `
+    // }
     return content
+}
+
+function genByTime(datas, timeOfDay){
+    let content = ''
+    switch (timeOfDay){
+        case 'morning':
+            for(let data of datas){
+                if(+data.time.split(":", 1) < 12){
+                    content += `
+                    <div class="time-button" role="button">${data.time}</div>
+                    `
+                    // console.log('morning', data);
+                }
+            }
+            if(content.length > 0){
+                const morning = '<div class="time_day"><span>Утро</span></div><div class="time">' 
+                + content + '</div>';
+                return morning
+            }else{
+                return '';
+            }
+        case 'afternoon':
+            for(let data of datas){
+                if(+data.time.split(":", 1) >= 12 && +data.time.split(":", 1) < 18){
+                    content += `
+                    <div class="time-button" role="button">${data.time}</div>
+                    `
+                    // console.log('afternoon', data);
+                }
+            }
+            if(content.length > 0){
+                const afternoon = '<div class="time_day"><span>День</span></div><div class="time">' 
+                + content + '</div>';
+                return afternoon
+            }else{
+                return '';
+            }
+        case 'night':
+            for(let data of datas){
+                if(+data.time.split(":", 1) >= 18){
+                    content += `
+                    <div class="time-button" role="button">${data.time}</div>
+                    `
+                    // console.log('night', data);
+                }
+            }
+            if(content.length > 0){
+                const night = '<div class="time_day"><span>Вечер</span></div><div class="time">' 
+                + content + '</div>';
+                return night
+            }else{
+                return '';
+            }
+    }
 }

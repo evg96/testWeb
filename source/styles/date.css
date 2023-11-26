@@ -1,16 +1,13 @@
 
 
 .time-button{
-    float: left;
-    width: 17%;
-    height: 40px;
-    margin: 1.5%;
+    width: 23%;
+    margin: 1%;
     border-radius: 10px;
-    border: 1px solid black;
-    /* background-color: rgb(146, 146, 137, 0.3); */
-    background-color: rgba(218, 209, 209, 0.3);
+    /* background-color: rgba(218, 209, 209, 0.3); */
+    background-color: #bebcbc;
     text-align: center;
-    padding: 7.5px 0;
+    padding: 9px 0;
 }
 
 .time-button:hover{
@@ -22,7 +19,10 @@
 }
 
 .time{
-    float: left;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+
     width: 95%;
     margin: 0 2.5%;
     padding-bottom: 15px;
@@ -38,52 +38,18 @@
     max-height: 120px;
     display: flex;
     overflow-x: scroll;
-    /* float: left; */
-    /* width: 98%; */
-    /* margin: 0 1% 10px 1%; */
 }
 
-.date .date-button{
-    /* float: left; */
-    /* width: 10%; */
-    min-width: 35px;
-    height: 50px;
+.date-button{
+    min-width: 45px;
+    height: 55px;
     margin: 1.5%;
     text-align: center;
     border-radius: 10px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-color: rgb(146, 146, 137, 0.3);
 }
 
-.select{
-    /* appearance: none; */
-    border: 1px solid black;
-    border-radius: 10px;
-    /* background-color: transparent; */
-    padding: 10px 35px 10px 15px;
-    outline: none;
-    cursor: pointer;
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.c{
-    color: #fff;
-}
-
-
-.test{
-    max-height: 120px;
-    /* border: 1px solid #ddd; */
-    display: flex;
-    overflow-x: auto;
-}
-
-.test .item{
-    min-width: 35px;
-    margin: 1.5%;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid black;
-    background-color: rgb(146, 146, 137, 0.3);
+.date-button>div{
+    margin-top: 8px;
 }
