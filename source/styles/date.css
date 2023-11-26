@@ -50,6 +50,10 @@
     background-color: rgb(146, 146, 137, 0.3);
 }
 
+.date-button:focus{
+    background-color: blue;
+}
+
 .date-button>div{
     margin-top: 8px;
 }
