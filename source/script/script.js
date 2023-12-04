@@ -6,26 +6,28 @@ import { initTG } from './telegram.js';
 const slectService = document.querySelector('#btn-service')
 const slectProvider = document.querySelector('#btn-provider')
 
-slectService.addEventListener('click', function(){
-    genServiceList();
-    let tg = initTG();
-    tg.expand();
-    tg.BackButton.show();
-    Telegram.WebApp.onEvent('backButtonClicked', function(){
-        const main = document.querySelector('main');
-        const content = `<div class="main_select">
-                            <div id="btn-service" class="btn" role="button">
-                                Выбрать услугу
-                            </div>
-                            <div id="btn-provider" class="btn" role="button">
-                                Выбрать мастера
-                            </div>
-                        </div>`
-        console.log('clic back');
-        main.innerHTML = content;
-        servicesListener();
-    });   
-});
+// slectService.addEventListener('click', function(){
+//     genServiceList();
+//     let tg = initTG();
+//     tg.expand();
+//     tg.BackButton.show();
+//     Telegram.WebApp.onEvent('backButtonClicked', function(){
+//         const main = document.querySelector('main');
+//         const content = `<div class="main_select">
+//                             <div id="btn-service" class="btn" role="button">
+//                                 Выбрать услугу
+//                             </div>
+//                             <div id="btn-provider" class="btn" role="button">
+//                                 Выбрать мастера
+//                             </div>
+//                         </div>`
+//         console.log('clic back');
+//         main.innerHTML = content;
+//         servicesListener();
+//     });   
+// });
+
+servicesListener()
 
 function servicesListener(){
     genServiceList()
