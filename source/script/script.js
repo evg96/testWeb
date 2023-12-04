@@ -23,12 +23,34 @@ slectService.addEventListener('click', function(){
                         </div>`
         console.log('clic back');
         main.innerHTML = content;
-        genServiceList();
+        servicesListener();
     });   
 });
 
+function servicesListener(){
+    genServiceList()
+    let tg = initTG();
+    tg.expand();
+    tg.BackButton.show();
+    Telegram.WebApp.onEvent('backButtonClicked', function(){
+        const main = document.querySelector('main');
+        const content = `<div class="main_select">
+                            <div id="btn-service" class="btn" role="button">
+                                Выбрать услугу
+                            </div>
+                            <div id="btn-provider" class="btn" role="button">
+                                Выбрать мастера
+                            </div>
+                        </div>`
+        console.log('clic back');
+        main.innerHTML = content;
+        genServiceList();
+    });   
+}
+
 
 function genServiceList(){
+    slectService.addEventListener('click', function(){
     let main = document.querySelector('main');
     main.innerHTML = `<div class="srv-container">
     <div id="service-list">
@@ -51,6 +73,7 @@ function genServiceList(){
             listEvent();
         })
     })
+});
 }
 
 slectProvider.addEventListener('click', function(){
