@@ -18,7 +18,7 @@ export function expandAccord(){
 }
 
 export function listEvent(){
-    const tg = initTG();
+    let tg = initTG();
     let orderInfo = new OrderInfo();
     let coll = document.getElementsByClassName('information');
     for(let i = 0; i < coll.length; i++){
