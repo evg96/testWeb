@@ -74,7 +74,12 @@ body{
 }
 
 hr{
-    color: #f6f6f6;
+    /* color: #f6f6f6; */
+    /* width: 50px; */
+    /* margin: 30px auto; */
+    border: 2px solid #f6f6f6;
+    /* color: red; */
+
 }
     
 .additional-comment{

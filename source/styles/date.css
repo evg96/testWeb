@@ -62,6 +62,14 @@
     background-color: blue;
 }
 
+.date-button:active{
+    background-color: blue;
+}
+
 .date-button>div{
     margin-top: 8px;
+}
+
+.unavail{
+    color: rgb(236, 243, 243);
 }

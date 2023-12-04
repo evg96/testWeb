@@ -3,8 +3,8 @@
 
 
 
-	const salonName = window.location.pathname;
-	export const appPath = 'app' + salonName
+	// const salonName = window.location.pathname;
+	// export const appPath = 'app' + salonName
 
 
 export function initTG(){

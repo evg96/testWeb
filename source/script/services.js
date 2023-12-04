@@ -25,6 +25,7 @@ function addServices(data){
     let duration = '';
     let hours = '';
     let minutes = '';
+    const mdur = data.duration.hours * 60 + data.duration.minutes
     data.duration.hours == 0 ? hours='' : hours=data.duration.hours + ' ч';
     data.duration.minutes == 0 ? minutes='' : minutes=data.duration.minutes + ' мин';
     duration = `<span class="duration">${hours} ${minutes}</span>`
@@ -34,7 +35,7 @@ function addServices(data){
         <h6>${data.title}</h6>
         <div class="description" data-id="${data.id}">
             <span class="price">${data.price} ₽</span>
-            <span class="duration">${duration}</span>
+            <span class="duration" data-duration="${mdur}">${duration}</span>
         </div>
     </div>
     `
