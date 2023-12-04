@@ -1,4 +1,4 @@
-// import { initTG } from '../telegram.js';
+import { initTG } from '../telegram.js';
 import { showEmployee } from './employee_card.js';
 import { showFooter, hideFooter } from './footer.js'
 export function expandAccord(){ 
@@ -18,6 +18,7 @@ export function expandAccord(){
 }
 
 export function listEvent(){
+    const tg = initTG();
     let orderInfo = new OrderInfo();
     let coll = document.getElementsByClassName('information');
     for(let i = 0; i < coll.length; i++){

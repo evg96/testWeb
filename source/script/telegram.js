@@ -17,6 +17,8 @@ export function initTG(){
 	tg.MainButton.textColor = "#0a0a0a"; //изменяем цвет текста кнопки
 	// tg.MainButton.color = "#91cee6"; //изменяем цвет бэкграунда кнопки
 	tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
+	tg.BackButton.isVisible = true;
+	tg.BackButton.show();
 	return tg;
 }
 
