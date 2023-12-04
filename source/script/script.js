@@ -46,7 +46,7 @@ function servicesListener(){
                         </div>`
         console.log('clic back');
         main.innerHTML = content;
-        genServiceList();
+        servicesListener();
     });   
 }
 
