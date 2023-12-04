@@ -7,7 +7,7 @@ const slectService = document.querySelector('#btn-service')
 const slectProvider = document.querySelector('#btn-provider')
 
 slectService.addEventListener('click', function(){
-    let main = document.querySelector('main');
+    genServiceList();
     let tg = initTG();
     tg.expand();
     tg.BackButton.show();
@@ -23,13 +23,17 @@ slectService.addEventListener('click', function(){
                         </div>`
         console.log('clic back');
         main.innerHTML = content;
-    });    
+        genServiceList();
+    });   
+});
+
+
+function genServiceList(){
+    let main = document.querySelector('main');
     main.innerHTML = `<div class="srv-container">
-                        <div id="service-list">
-                            <div class="accordion" id="accordion">
-                            </div>               
-                        </div>
-                    </div>`;
+    <div id="service-list">
+        <div class="accordion" id="accordion"></div></div>
+    </div>`;
     fetch('./app')
     .then((response) => response.json())
     .then((datas) => {
@@ -47,7 +51,7 @@ slectService.addEventListener('click', function(){
             listEvent();
         })
     })
-});
+}
 
 slectProvider.addEventListener('click', function(){
     let main = document.querySelector('main');
