@@ -21,6 +21,9 @@ export function listEvent(){
     let tg = initTG();
     tg.expand();
     tg.BackButton.show();
+    Telegram.WebApp.onEvent('backButtonClicked', function(){
+        console.log('clic back');
+    });
     let orderInfo = new OrderInfo();
     let coll = document.getElementsByClassName('information');
     for(let i = 0; i < coll.length; i++){
