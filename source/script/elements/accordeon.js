@@ -22,7 +22,14 @@ export function listEvent(){
     tg.expand();
     tg.BackButton.show();
     Telegram.WebApp.onEvent('backButtonClicked', function(){
+        const main = document.querySelector('main');
+        const content = `<div class="main_select">
+                            <div id="btn-service" class="btn" role="button">
+                                Выбрать услугу
+                            </div>
+                        </div>`
         console.log('clic back');
+        main.innerHTML = content;
     });
     let orderInfo = new OrderInfo();
     let coll = document.getElementsByClassName('information');
