@@ -13,6 +13,7 @@ slectService.addEventListener('click', function(){
     tg.expand();
     tg.BackButton.show();
     Telegram.WebApp.onEvent('backButtonClicked', function(){
+        tg.BackButton.hide();
         location.reload();
     });   
     main.innerHTML = `<div class="srv-container">
