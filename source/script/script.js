@@ -1,14 +1,29 @@
 import { displayServicesGroups, displayServices } from './services.js';
 import { expandAccord, listEvent } from './elements/accordeon.js';
 import { genEmployee } from './elements/employee_card.js';
-
+import { initTG } from './elements/telegram.js';
 
 const slectService = document.querySelector('#btn-service')
 const slectProvider = document.querySelector('#btn-provider')
 
 slectService.addEventListener('click', function(){
     let main = document.querySelector('main');
-    
+    let tg = initTG();
+    tg.expand();
+    tg.BackButton.show();
+    Telegram.WebApp.onEvent('backButtonClicked', function(){
+        const main = document.querySelector('main');
+        const content = `<div class="main_select">
+                            <div id="btn-service" class="btn" role="button">
+                                Выбрать услугу
+                            </div>
+                            <div id="btn-provider" class="btn" role="button">
+                                Выбрать мастера
+                            </div>
+                        </div>`
+        console.log('clic back');
+        main.innerHTML = content;
+    });    
     main.innerHTML = `<div class="srv-container">
                         <div id="service-list">
                             <div class="accordion" id="accordion">

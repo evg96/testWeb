@@ -1,4 +1,4 @@
-import { initTG } from '../telegram.js';
+// import { initTG } from '../telegram.js';
 import { showEmployee } from './employee_card.js';
 import { showFooter, hideFooter } from './footer.js'
 export function expandAccord(){ 
@@ -18,22 +18,6 @@ export function expandAccord(){
 }
 
 export function listEvent(){
-    let tg = initTG();
-    tg.expand();
-    tg.BackButton.show();
-    Telegram.WebApp.onEvent('backButtonClicked', function(){
-        const main = document.querySelector('main');
-        const content = `<div class="main_select">
-                            <div id="btn-service" class="btn" role="button">
-                                Выбрать услугу
-                            </div>
-                            <div id="btn-provider" class="btn" role="button">
-                                Выбрать мастера
-                            </div>
-                        </div>`
-        console.log('clic back');
-        main.innerHTML = content;
-    });
     let orderInfo = new OrderInfo();
     let coll = document.getElementsByClassName('information');
     for(let i = 0; i < coll.length; i++){
