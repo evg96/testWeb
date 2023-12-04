@@ -1,7 +1,7 @@
 import { displayServicesGroups, displayServices } from './services.js';
 import { expandAccord, listEvent } from './elements/accordeon.js';
 import { genEmployee } from './elements/employee_card.js';
-import { initTG } from '../telegram.js';
+import { initTG } from './telegram.js';
 
 
 const slectService = document.querySelector('#btn-service')
