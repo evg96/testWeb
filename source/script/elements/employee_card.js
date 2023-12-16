@@ -1,9 +1,11 @@
 import { hideFooter } from './footer.js';
 import { showDays } from './calendar.js';
-export function genEmployee(datas, orderInfo){
+// import { orderInfo } from '../services_page.js';
+// import { listEvent } from './accordeon.js'
+
+export function genEmployee(datas){
     let content = ''
     for (let data of datas){
-
         content += createEpmlCard(data);
     }
     return content
@@ -23,8 +25,16 @@ function createEpmlCard(data){
     `
 }
 
-export function showEmployee(orderInfo){
+export function showEmployee(/*orderInfo/*, histPage*/){    
     const element = document.querySelector('#btn-provider');
+
+    element.addEventListener('click', function(){
+        window.open('./employee.html', '_self');
+        showEmpl(orderInfo/*, histPage*/);
+    });
+}
+
+export function showEmpl(orderInfo/*, histPage*/){
     let url = '';
     const ids = orderInfo.getIDs();
     if (ids != ""){
@@ -32,26 +42,28 @@ export function showEmployee(orderInfo){
     } else{
         './app/employee'
     }
-    element.addEventListener('click', function(){
-        let main = document.querySelector('main');
-        fetch(url)
-        .then((response) => response.json())
-        .then((datas) => {
-            const emplInfo = getEmplInfo(datas);
-            const content = genEmployee(datas, orderInfo);
-            main.innerHTML = content;
-            hideFooter();
-            if(datas.length == emplInfo.length){
-                date(orderInfo, emplInfo);
-            }else{
-                alert("something wrong");
-                return;
-            }
-        });
-    });
+    let main = document.querySelector('main');
+    fetch(url)
+    .then((response) => response.json())
+    .then((datas) => {
+        const emplInfo = getEmplInfo(datas);
+        let content = genEmployee(datas, orderInfo);
+        main.innerHTML = content;
+        document.getElementById('back').addEventListener('click', function(){
+            // histPage.restorePage()
+        })
+        hideFooter();
+        if(datas.length == emplInfo.length){
+            // histPage.storePage(document.querySelector('main').innerHTML, 'showEmpl')
+            date(orderInfo, emplInfo);
+        }else{
+            alert("something wrong");
+            return;
+        }
+    });    
 }
 
-export function changeEmployeeagain(orderInfo){
+export function changeEmployeeagain(orderInfo){    //use this function for last page (change employee)
     let url = '';
     const ids = orderInfo.getIDs();
     if (ids != ""){

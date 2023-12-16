@@ -1,53 +1,60 @@
-import { displayServicesGroups, displayServices } from './services.js';
-import { expandAccord, listEvent } from './elements/accordeon.js';
+import { showServices, expandList, listServices  } from './services.js';
+// import { expandAccord, listServices } from './elements/accordeon.js';
 import { genEmployee } from './elements/employee_card.js';
 import { initTG } from './telegram.js';
+import { App, HistoryPage, OrderInfo } from './elements/manage_page.js'
 
 
-const slectService = document.querySelector('#btn-service')
-const slectProvider = document.querySelector('#btn-provider')
+// var orderInform = new OrderInfo;
+// export const object = OrderInfo
+// localStorage.setItem()
+// var orderInform = new OrderInfo;
+// export default { orderInform }
+// module.exports = { orderInform };
+// orderInform.employee.name = "test";
 
-slectService.addEventListener('click', function(){
-    let main = document.querySelector('main');
-    let tg = initTG();
-    tg.expand();
-    tg.BackButton.show();
-    Telegram.WebApp.onEvent('backButtonClicked', function(){
-        tg.BackButton.hide();
-        location.reload();
-    });   
-    main.innerHTML = `<div class="srv-container">
-                        <div id="service-list">
-                            <div class="accordion" id="accordion">
-                            </div>               
-                        </div>
-                    </div>`;
-    fetch('./app')
-    .then((response) => response.json())
-    .then((datas) => {
-        displayServicesGroups(datas);
-        let ids = '';
-        for (let data of datas){
-            ids += `${data.id},`
-        }
-        ids = ids.substring(0, ids.length - 1);  // delete last comma
-        fetch(`./app/service?servgroup=${ids}`)
-        .then((respons)=> respons.json())
-        .then((services) => {
-            displayServices(services);
-            expandAccord();
-            listEvent();
-        })
-    })
-});
+// const selectService = document.querySelector('#btn-service')
+// const slectProvider = document.querySelector('#btn-provider')
 
-slectProvider.addEventListener('click', function(){
-    let main = document.querySelector('main');
-    fetch('./app/employee')
-    .then((response) => response.json())
-    .then((datas) => {
-        const content = genEmployee(datas);
-        main.innerHTML = content;
-    });
-});
+// selectService.addEventListener('click', async function(){
+//     window.open('./services.html', '_self')
+//     // let main = document.querySelector('main');
+//     // let tg = initTG();
+//     // let orderInfo = new OrderInfo();
+//     // // let histPage = new HistoryPage();
+//     // // let app = new App(orderInfo, histPage);
+//     // tg.expand();
+//     // tg.BackButton.show();
+//     // Telegram.WebApp.onEvent('backButtonClicked', function(){
+//     //     tg.BackButton.hide();
+//     //     location.reload();
+//     // });   
+//     // main.innerHTML = `<div class="srv-container">
+//     //                     <div id="service-list">
+//     //                         <div class="accordion" id="accordion">
+//     //                         </div>               
+//     //                     </div>
+//     //                 </div>`;
+//     // await fetch('./app/service')
+//     // .then((response) => response.json())
+//     // .then((datas) => {
+//     //     showServices(datas);
+//     //     expandList();
+//     //         // listEvent();
+//     //         // app.listEvent();
+//     //     // })
+//     // })
+//     // console.log(orderInfo)
+//     // listServices(orderInfo);
+// });
+
+// slectProvider.addEventListener('click', function(){
+//     let main = document.querySelector('main');
+//     fetch('./app/employee')
+//     .then((response) => response.json())
+//     .then((datas) => {
+//         const content = genEmployee(datas);
+//         main.innerHTML = content;
+//     });
+// });
 
