@@ -153,7 +153,7 @@ export class OrderInfo{
         }
         let endTime  =  new Date(this.date.toISOString());
 
-        endTime.setMinutes(endTime.getMinutes() + duration);
+        endTime.setSeconds(endTime.getSeconds() + duration);
         return endTime;
     }
     getFullDuration(){
@@ -161,8 +161,8 @@ export class OrderInfo{
         for(let service of this.servicesInfo){
             duration += service.duration;
         }
-        const h = Math.trunc(duration / 60);
-        const m = duration - h*60;
+        const h = Math.trunc(duration / 3600);
+        const m = (duration - h*60)/60;
         let hours = '';
         let minutes = '';
         if(h > 0){
