@@ -162,7 +162,7 @@ export class OrderInfo{
             duration += service.duration;
         }
         const h = Math.trunc(duration / 3600);
-        const m = (duration - h*60)/60;
+        const m = (duration - h*3600)/60;
         let hours = '';
         let minutes = '';
         if(h > 0){
