@@ -91,3 +91,9 @@ function displayServices(datas){
         element.innerHTML = content;
     }
 }
+
+function accordion(data){
+    return`
+    <button class="collapsible">${data}</button>
+    <div class="content" id="services_${data}"></div>`
+}
