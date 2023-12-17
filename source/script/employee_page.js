@@ -23,12 +23,12 @@ function showEmpl(/*orderInfo/*, histPage*/){
         let content = genEmployee(datas, orderInfo);
         main.innerHTML = content;
         tg.BackButton.show();
-        document.querySelector('.popup-close').addEventListener('click', function(){
+        Telegram.WebApp.onEvent('backButtonClicked', function(){
             window.history.back();
-        })
+        });
         document.getElementById('back').addEventListener('click', function(){
             window.history.back();
-        })
+        });
         // hideFooter();
         if(datas.length == emplInfo.length){
             // histPage.storePage(document.querySelector('main').innerHTML, 'showEmpl')
