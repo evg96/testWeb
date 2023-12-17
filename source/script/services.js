@@ -1,4 +1,3 @@
-// import { showEmployee } from './elements/employee_card.js'
 import { showFooter, hideFooter } from './elements/footer.js'
 import { OrderInfo } from './elements/manage_page.js'
 

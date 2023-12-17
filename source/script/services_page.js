@@ -7,8 +7,9 @@ function show(){
     fetch('./app/service')
     .then((response) => response.json())
     .then((datas) => {
-        showServices(datas);
-        expandList();
-        listServices();
+        console.log(datas);
+        // showServices(datas);
+        // expandList();
+        // listServices();
     })
 }
