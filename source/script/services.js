@@ -10,8 +10,6 @@ export function showServices(datas) {
     displayServices(datas)
 }
 
-// var orderInform = new OrderInfo;
-
 function displayCategories(datas) {
     const element = document.querySelector('#accordion');
 
