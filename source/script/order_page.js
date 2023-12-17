@@ -98,8 +98,8 @@ function createCheckServices(orderInfo){
     // let editIcon = '';
     // if(orderInfo.servicesInfo.length > 1){
         let editIcon = `
-        <div class="check-2" id="delete-service">
-            <img class="edit-icon" src="../source/img/delete-garbage-office-svgrepo-com.svg" alt="">
+        <div class="check-2" id="change-service">
+            <img class="edit-icon" src="../source/img/edit-2-svgrepo-com.svg" alt="">
         </div>
         `
     // }
