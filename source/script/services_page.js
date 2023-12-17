@@ -51,7 +51,6 @@ function listServices(/*orderInfo/*, histPage*/){
             const price = getPrice(priceSelector.innerHTML);
             if (checkbox.checked){
                 orderInfo.addService(id, title, price, duration)
-                console.log(orderInfo);
             }else{
                 orderInfo.deleteService(id)
             }
