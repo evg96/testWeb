@@ -112,9 +112,9 @@ function createCheckServices(orderInfo){
                     <p>${service.price} ₽</p>
                 </div>
             </div>
-            <div id="${service.id}">
+      
                 ${editIcon}
-            </div>
+      
         </div>
         `
         if(count == orderInfo.servicesInfo.length-1){
