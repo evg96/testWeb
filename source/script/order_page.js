@@ -29,9 +29,9 @@ function genMainPage(orderInfo){
     document.querySelector('#change-date').addEventListener('click', function(){
         window.open('./calendar.html', '_self');
     })
-    document.querySelector('#delete-service').addEventListener('click', function(){
-        orderInfo.deleteService();
-        // window.open('./calendar.html', '_self');
+    document.querySelector('#change-service').addEventListener('click', function(){
+        // orderInfo.deleteService();
+        window.open('./services.html', '_self');
     })
     document.getElementById('back').addEventListener('click', function(){
         window.history.back();
@@ -95,14 +95,14 @@ function createCheckTime(orderInfo){
 function createCheckServices(orderInfo){
     let content = '';
     let count = 0;
-    let editIcon = '';
-    if(orderInfo.servicesInfo.length > 1){
-        editIcon = `
-        <div class="check-2" id="delete-service">
-            <img class="edit-icon" src="../source/img/delete-garbage-office-svgrepo-com.svg" alt="">
-        </div>
-        `
-    }
+    // let editIcon = '';
+    // if(orderInfo.servicesInfo.length > 1){
+    //     editIcon = `
+    //     <div class="check-2" id="delete-service">
+    //         <img class="edit-icon" src="../source/img/delete-garbage-office-svgrepo-com.svg" alt="">
+    //     </div>
+    //     `
+    // }
     for(let service of orderInfo.servicesInfo){
         content += `
         <div class="major-check">
@@ -112,9 +112,9 @@ function createCheckServices(orderInfo){
                     <p>${service.price} ₽</p>
                 </div>
             </div>
-      
-                ${editIcon}
-      
+            <div class="check-2" id="change-service">
+                <img class="edit-icon" src="../source/img/edit-2-svgrepo-com.svg" alt="">
+            </div> 
         </div>
         `
         if(count == orderInfo.servicesInfo.length-1){
