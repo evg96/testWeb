@@ -1,4 +1,5 @@
 import { OrderInfo } from './elements/manage_page.js'
+import { tg } from './telegram.js'
 
 showEmpl();
 
@@ -21,6 +22,7 @@ function showEmpl(/*orderInfo/*, histPage*/){
         const emplInfo = getEmplInfo(datas);
         let content = genEmployee(datas, orderInfo);
         main.innerHTML = content;
+        tg.BackButton.show();
         document.getElementById('back').addEventListener('click', function(){
             window.history.back();
         })

@@ -6,6 +6,7 @@
 	// const salonName = window.location.pathname;
 	// export const appPath = 'app' + salonName
 
+export const tg = initTG();
 
 export function initTG(){
 	let tg = window.Telegram.WebApp;
