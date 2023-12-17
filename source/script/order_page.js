@@ -23,6 +23,12 @@ function genMainPage(orderInfo){
     Telegram.WebApp.onEvent('backButtonClicked', function(){
         window.history.back();
     });
+    document.querySelector('#change-employee').addEventListener('click', function(){
+        window.open('./employee.html', '_self');
+    })
+    document.querySelector('#change-date').addEventListener('click', function(){
+        window.open('./calendar.html', '_self');
+    })
     document.getElementById('back').addEventListener('click', function(){
         window.history.back();
     })
