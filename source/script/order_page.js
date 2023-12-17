@@ -30,13 +30,12 @@ function genMainPage(orderInfo){
         window.open('./calendar.html', '_self');
     })
     document.querySelector('#change-service').addEventListener('click', function(){
-        // orderInfo.deleteService();
         window.open('./services.html', '_self');
     })
     document.getElementById('back').addEventListener('click', function(){
         window.history.back();
     })
-    // changeOptions(orderInfo);
+    showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Подтвердить запись');
 }
 
 
@@ -95,14 +94,11 @@ function createCheckTime(orderInfo){
 function createCheckServices(orderInfo){
     let content = '';
     let count = 0;
-    // let editIcon = '';
-    // if(orderInfo.servicesInfo.length > 1){
         let editIcon = `
         <div class="check-2" id="change-service">
             <img class="edit-icon" src="../source/img/edit-2-svgrepo-com.svg" alt="">
         </div>
         `
-    // }
     for(let service of orderInfo.servicesInfo){
         content += `
         <div class="major-check">

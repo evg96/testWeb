@@ -3,13 +3,12 @@ import { tg } from './telegram.js'
 
 showEmpl();
 
-function showEmpl(/*orderInfo/*, histPage*/){
+function showEmpl(){
     const orderInfo = new OrderInfo;
     const lsOrderInfo = JSON.parse(localStorage.getItem('orderInfoServices'));
     orderInfo.servicesInfo = lsOrderInfo;
     let url = '';
     const ids = orderInfo.getIDs();
-    // console.log(ids);
     if (ids != ""){
         url = `./app/employee?skill=${ids}`
     } else{
@@ -29,9 +28,7 @@ function showEmpl(/*orderInfo/*, histPage*/){
         document.getElementById('back').addEventListener('click', function(){
             window.history.back();
         });
-        // hideFooter();
         if(datas.length == emplInfo.length){
-            // histPage.storePage(document.querySelector('main').innerHTML, 'showEmpl')
             date(orderInfo, emplInfo);
         }else{
             alert("something wrong");

@@ -57,7 +57,7 @@ function listServices(){
                 orderInfo.deleteService(id)
             }
             if (orderInfo.getNumberOfServices() > 0){
-                showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice());
+                showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Выбрать мастера');
                 showEmployee();
             }else{
                 hideFooter();
@@ -120,15 +120,11 @@ function addServices(data){
     `
 }
 
-function showEmployee(/*orderInfo/*, histPage*/){
-    // console.log("orderInfo", orderInfo);
+function showEmployee(){
     const element = document.querySelector('#btn-provider');
-
     element.addEventListener('click', function(){
-        // wordddd = "an word";
         localStorage.setItem('orderInfoServices', JSON.stringify(orderInfo.servicesInfo))
         window.open('./employee.html', '_self');
-        // showEmpl(orderInfo/*, histPage*/);
     });
 }
 

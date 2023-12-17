@@ -1,6 +1,5 @@
 
-
-export function showFooter(services, price){
+export function showFooter(services, price, text){
     let footer = document.querySelector('footer');
     const content = `
     <div class="footer-info">
@@ -9,7 +8,7 @@ export function showFooter(services, price){
             <span id="pr">${price} ₽</span>
         </div>
         <div class="select-provider" id="btn-provider" role="button">
-            Выбрать мастера
+            ${text}
         </div>
     </div>        
     `
