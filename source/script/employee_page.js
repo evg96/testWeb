@@ -23,7 +23,7 @@ function showEmpl(/*orderInfo/*, histPage*/){
         let content = genEmployee(datas, orderInfo);
         main.innerHTML = content;
         tg.BackButton.show();
-        document.querySelector('popup-close').addEventListener('click', function(){
+        document.querySelector('.popup-close').addEventListener('click', function(){
             window.history.back();
         })
         document.getElementById('back').addEventListener('click', function(){
