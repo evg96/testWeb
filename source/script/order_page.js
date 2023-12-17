@@ -26,18 +26,22 @@ function genMainPage(orderInfo){
     });
     document.querySelector('#change-employee').addEventListener('click', function(){
         window.open('./employee.html', '_self');
-    })
+    });
     document.querySelector('#change-date').addEventListener('click', function(){
         window.open('./calendar.html', '_self');
-    })
+    });
     document.querySelector('#change-service').addEventListener('click', function(){
         window.open('./services.html', '_self');
-    })
+    });
     document.getElementById('back').addEventListener('click', function(){
         window.history.back();
-    })
+    });
     showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Подтвердить запись');
-    Telegram.WebApp.sendData("test data");
+    document.querySelector('#btn-provider').addEventListener('click', function(){
+        Telegram.WebApp.sendData("test data");
+        console.log('data is sent')
+    });
+    
 }
 
 
