@@ -1,4 +1,3 @@
-// import { showServices, expandList, listServices  } from './services.js';
 import { OrderInfo } from './elements/manage_page.js'
 import { showFooter, hideFooter } from './elements/footer.js'
 import { tg } from './telegram.js'
@@ -10,7 +9,7 @@ show();
 
 function show(){
     tg.expand();
-    tg.BackButton.hide();
+    // tg.BackButton.hide();
     fetch('./app/service')
     .then((response) => response.json())
     .then((datas) => {
@@ -41,10 +40,8 @@ function expandList(){
     }
 }
 
-function listServices(/*orderInfo/*, histPage*/){
+function listServices(){
     let coll = document.getElementsByClassName('information');
-    
-    // var orderInform = require('./script.js');
     for(let i = 0; i < coll.length; i++){
         coll[i].addEventListener('click', function(){
             const id = coll[i].querySelector('[class=description]').dataset.id;
@@ -61,9 +58,7 @@ function listServices(/*orderInfo/*, histPage*/){
             }
             if (orderInfo.getNumberOfServices() > 0){
                 showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice());
-                // histPage.storePage(document.querySelector('main').innerHTML, 'listServices')
-                showEmployee(/*orderInfo/*, histPage*/);
-                // console.log(orderInfo);
+                showEmployee();
             }else{
                 hideFooter();
             }
@@ -94,6 +89,9 @@ function displayServices(datas){
         content += service;
         element.innerHTML = content;
     }
+    Telegram.WebApp.onEvent('backButtonClicked', function(){
+        window.history.back();
+    });
 }
 
 function accordion(data){
