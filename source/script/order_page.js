@@ -37,6 +37,7 @@ function genMainPage(orderInfo){
         window.history.back();
     })
     showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Подтвердить запись');
+    Telegram.WebApp.sendData("test data");
 }
 
 
