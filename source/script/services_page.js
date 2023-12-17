@@ -10,6 +10,7 @@ show();
 
 function show(){
     tg.expand();
+    tg.BackButton.hide();
     fetch('./app/service')
     .then((response) => response.json())
     .then((datas) => {
