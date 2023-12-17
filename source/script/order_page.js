@@ -29,6 +29,10 @@ function genMainPage(orderInfo){
     document.querySelector('#change-date').addEventListener('click', function(){
         window.open('./calendar.html', '_self');
     })
+    document.querySelector('#delete-service').addEventListener('click', function(){
+        orderInfo.deleteService();
+        // window.open('./calendar.html', '_self');
+    })
     document.getElementById('back').addEventListener('click', function(){
         window.history.back();
     })
@@ -94,7 +98,7 @@ function createCheckServices(orderInfo){
     let editIcon = '';
     if(orderInfo.servicesInfo.length > 1){
         editIcon = `
-        <div class="check-2">
+        <div class="check-2" id="delete-service">
             <img class="edit-icon" src="../source/img/delete-garbage-office-svgrepo-com.svg" alt="">
         </div>
         `
@@ -108,7 +112,9 @@ function createCheckServices(orderInfo){
                     <p>${service.price} ₽</p>
                 </div>
             </div>
-            ${editIcon}
+            <div id="${service.id}">
+                ${editIcon}
+            </div>
         </div>
         `
         if(count == orderInfo.servicesInfo.length-1){
