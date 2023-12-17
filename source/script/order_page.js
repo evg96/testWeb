@@ -1,4 +1,5 @@
 import { OrderInfo } from './elements/manage_page.js'
+import { tg } from './telegram.js'
 
 const orderInfo = new OrderInfo;
 const lsOrderInfoS = JSON.parse(localStorage.getItem('orderInfoServices'));

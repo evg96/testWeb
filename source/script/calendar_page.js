@@ -1,5 +1,6 @@
 import { MSKDate } from './date/gen_date.js';
 import { OrderInfo } from './elements/manage_page.js'
+import { tg } from './telegram.js'
 
 
 const orderInfo = new OrderInfo;
