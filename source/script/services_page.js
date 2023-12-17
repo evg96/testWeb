@@ -1,7 +1,7 @@
 // import { showServices, expandList, listServices  } from './services.js';
-import { OrderInfo } from './elements/manage_page'
-import { showFooter, hideFooter } from './elements/footer'
-import { tg } from './telegram'
+import { OrderInfo } from './elements/manage_page.js'
+import { showFooter, hideFooter } from './elements/footer.js'
+import { tg } from './telegram.js'
 const orderInfo = new OrderInfo;
 
 
