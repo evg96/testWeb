@@ -91,6 +91,14 @@ function createCheckTime(orderInfo){
 function createCheckServices(orderInfo){
     let content = '';
     let count = 0;
+    let editIcon = '';
+    if(orderInfo.servicesInfo.length > 1){
+        editIcon = `
+        <div class="check-2">
+            <img class="edit-icon" src="../source/img/delete-garbage-office-svgrepo-com.svg" alt="">
+        </div>
+        `
+    }
     for(let service of orderInfo.servicesInfo){
         content += `
         <div class="major-check">
@@ -100,9 +108,7 @@ function createCheckServices(orderInfo){
                     <p>${service.price} ₽</p>
                 </div>
             </div>
-            <div class="check-2">
-                <img class="edit-icon" src="../source/img/delete-garbage-office-svgrepo-com.svg" alt="">
-            </div>
+            ${editIcon}
         </div>
         `
         if(count == orderInfo.servicesInfo.length-1){
