@@ -97,3 +97,40 @@ function accordion(data){
     <button class="collapsible">${data}</button>
     <div class="content" id="services_${data}"></div>`
 }
+
+function addServices(data){
+    const h = Math.floor(+data.duration / 3600);
+    const m = ((data.duration/60 - h * 60));
+    let hours = '';
+    let minutes = '';
+    h == 0 ? hours='' : hours=h + ' ч';
+    m == 0 ? minutes='' : minutes=m + ' мин';
+    const duration = `<span class="duration">${hours} ${minutes}</span>`
+    return `
+    <div class="information" role="button">
+        <input type="checkbox" class="checkboxstyle" disabled />
+        <h6>${data.title}</h6>
+        <div class="description" data-id="${data.id}">
+            <span class="price">${data.price} ₽</span>
+            <span class="duration" data-duration="${data.duration}">${duration}</span>
+        </div>
+    </div>
+    `
+}
+
+function showEmployee(/*orderInfo/*, histPage*/){
+    // console.log("orderInfo", orderInfo);
+    const element = document.querySelector('#btn-provider');
+
+    element.addEventListener('click', function(){
+        // wordddd = "an word";
+        localStorage.setItem('orderInfoServices', JSON.stringify(orderInfo.servicesInfo))
+        window.open('./employee.html', '_self');
+        // showEmpl(orderInfo/*, histPage*/);
+    });
+}
+
+
+function getPrice(rowPrice){
+    return +rowPrice.split(' ')[0];
+}
