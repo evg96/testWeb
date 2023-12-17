@@ -97,11 +97,11 @@ function createCheckServices(orderInfo){
     let count = 0;
     // let editIcon = '';
     // if(orderInfo.servicesInfo.length > 1){
-    //     editIcon = `
-    //     <div class="check-2" id="delete-service">
-    //         <img class="edit-icon" src="../source/img/delete-garbage-office-svgrepo-com.svg" alt="">
-    //     </div>
-    //     `
+        let editIcon = `
+        <div class="check-2" id="delete-service">
+            <img class="edit-icon" src="../source/img/delete-garbage-office-svgrepo-com.svg" alt="">
+        </div>
+        `
     // }
     for(let service of orderInfo.servicesInfo){
         content += `
@@ -112,15 +112,16 @@ function createCheckServices(orderInfo){
                     <p>${service.price} ₽</p>
                 </div>
             </div>
-            <div class="check-2" id="change-service">
-                <img class="edit-icon" src="../source/img/edit-2-svgrepo-com.svg" alt="">
-            </div> 
+            ${editIcon}
         </div>
         `
         if(count == orderInfo.servicesInfo.length-1){
             continue
         }else{
             content += '<hr>';
+        }
+        if(count == 0){
+            editIcon = '';
         }
         count++;
     }
