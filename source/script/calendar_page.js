@@ -33,6 +33,10 @@ function createDays(availDates, orderInfo){
                           <div class="time"> Выберете дату</div>`
         let date = document.querySelector('[class=date]');
         date.innerHTML = content;
+        tg.BackButton.show();
+        Telegram.WebApp.onEvent('backButtonClicked', function(){
+            window.history.back();
+        });
         document.getElementById('back').addEventListener('click', function(){
             window.history.back();
         })

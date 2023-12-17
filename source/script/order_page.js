@@ -18,6 +18,10 @@ function genMainPage(orderInfo){
     const servicesContent =  createCheckServices(orderInfo);
     const content = employeeContent + timeContent + servicesContent;
     main.innerHTML = content;
+    tg.BackButton.show();
+    Telegram.WebApp.onEvent('backButtonClicked', function(){
+        window.history.back();
+    });
     document.getElementById('back').addEventListener('click', function(){
         window.history.back();
     })
