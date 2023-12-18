@@ -14,6 +14,12 @@ orderInfo.date = new Date(lsOrderInfoT);
 genMainPage(orderInfo);
 
 function genMainPage(orderInfo){
+
+    tg.MainButton.text = "Подтвердить запись";
+    tg.MainButton.color = "#91cee6";
+    tg.BackButton.isVisible = true;
+	tg.BackButton.show();
+
     const main = document.querySelector('main');
     const employeeContent = createCheckEmployee(orderInfo.employee);
     const timeContent = createCheckTime(orderInfo);
@@ -41,10 +47,7 @@ function genMainPage(orderInfo){
     //     Telegram.WebApp.sendData("test data");
     //     console.log('data is sent')
     // });
-    tg.MainButton.text = "Подтвердить запись";
-    tg.MainButton.color = "#91cee6";
-    tg.BackButton.isVisible = true;
-	tg.BackButton.show();
+
 }
 
 
