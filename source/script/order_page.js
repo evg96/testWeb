@@ -45,6 +45,7 @@ function genMainPage(orderInfo){
     tg.MainButton.color = "#91cee6";
     tg.MainButton.isVisible = true;
 	tg.MainButton.show();
+    tg.MainButton.enable();
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         console.log('main button is clicked')
     });
