@@ -36,12 +36,15 @@ function genMainPage(orderInfo){
     document.getElementById('back').addEventListener('click', function(){
         window.history.back();
     });
-    showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Подтвердить запись');
-    document.querySelector('#btn-provider').addEventListener('click', function(){
-        Telegram.WebApp.sendData("test data");
-        console.log('data is sent')
-    });
-    
+    // showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Подтвердить запись');
+    // document.querySelector('#btn-provider').addEventListener('click', function(){
+    //     Telegram.WebApp.sendData("test data");
+    //     console.log('data is sent')
+    // });
+    tg.MainButton.text = "Подтвердить запись";
+    tg.MainButton.color = "#91cee6";
+    tg.BackButton.isVisible = true;
+	tg.BackButton.show();
 }
 
 
