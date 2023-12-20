@@ -62,7 +62,7 @@ function listServices(){
                 tg.MainButton.isVisible = true;
                 tg.MainButton.show();
                 // showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Выбрать мастера');
-                // showEmployee();
+                showEmployee();
             }else{
                 tg.MainButton.hide();
                 // hideFooter();
@@ -126,11 +126,15 @@ function addServices(data){
 }
 
 function showEmployee(){
-    const element = document.querySelector('#btn-provider');
-    element.addEventListener('click', function(){
+    Telegram.WebApp.onEvent('mainButtonClicked', function(){
         localStorage.setItem('orderInfoServices', JSON.stringify(orderInfo.servicesInfo))
         window.open('./employee.html', '_self');
     });
+    // const element = document.querySelector('#btn-provider');
+    // element.addEventListener('click', function(){
+    //     localStorage.setItem('orderInfoServices', JSON.stringify(orderInfo.servicesInfo))
+    //     window.open('./employee.html', '_self');
+    // });
 }
 
 
