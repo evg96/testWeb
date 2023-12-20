@@ -57,10 +57,15 @@ function listServices(){
                 orderInfo.deleteService(id)
             }
             if (orderInfo.getNumberOfServices() > 0){
-                showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Выбрать мастера');
-                showEmployee();
+                tg.MainButton.text = `Услуг: ${orderInfo.getNumberOfServices()} Цена: ${orderInfo.getFullPrice()}`;
+                tg.MainButton.color = "#91cee6";
+                tg.MainButton.isVisible = true;
+                tg.MainButton.show();
+                // showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Выбрать мастера');
+                // showEmployee();
             }else{
-                hideFooter();
+                tg.MainButton.hide();
+                // hideFooter();
             }
         })
     }
