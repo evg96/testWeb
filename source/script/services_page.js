@@ -58,7 +58,7 @@ function listServices(){
             }
             if (orderInfo.getNumberOfServices() > 0){
                 tg.MainButton.text = `Выбрано услуг: ${orderInfo.getNumberOfServices()}         Цена: ${orderInfo.getFullPrice()}`;
-                tg.MainButton.color = "#91cee6";
+                tg.MainButton.color = "#3390ec";
                 tg.MainButton.isVisible = true;
                 tg.MainButton.show();
                 // showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Выбрать мастера');
