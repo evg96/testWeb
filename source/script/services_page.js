@@ -57,7 +57,7 @@ function listServices(){
                 orderInfo.deleteService(id)
             }
             if (orderInfo.getNumberOfServices() > 0){
-                tg.MainButton.text = `Услуг: ${orderInfo.getNumberOfServices()} Цена: ${orderInfo.getFullPrice()}`;
+                tg.MainButton.text = `Выбрано услуг: ${orderInfo.getNumberOfServices()}         Цена: ${orderInfo.getFullPrice()}`;
                 tg.MainButton.color = "#91cee6";
                 tg.MainButton.isVisible = true;
                 tg.MainButton.show();
