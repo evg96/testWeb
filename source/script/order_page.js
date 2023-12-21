@@ -47,9 +47,10 @@ function genMainPage(orderInfo){
 	tg.MainButton.show();
 
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
-        const data = tg.initData();
+        const data = tg.initData;
+        
         // tg.sendData("data");
-        console.log('main button is clicked', data)
+        console.log('main button is clicked', JSON.parse(data))
     });
 }
 
