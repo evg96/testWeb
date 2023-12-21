@@ -128,9 +128,9 @@ function addServices(data){
 function showEmployee(){
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         localStorage.setItem('orderInfoServices', JSON.stringify(orderInfo.servicesInfo))
-        const data = tg.initData();
+        // const data = tg.initData();
         // tg.sendData("data");
-        console.log('main button is clicked', data)
+        console.log('main button is clicked');
         window.open('./employee.html', '_self');
     });
     // const element = document.querySelector('#btn-provider');
