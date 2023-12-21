@@ -131,8 +131,8 @@ function showEmployee(){
         const data = tg.initData;
         // tg.sendData("data");
         // const data2 = tg.initDataUnsafe;
-        console.log('main button is clicked', JSON.parse(data));
-        // console.log('main button is clicked2', data2.user);
+        console.log('main button is clicked', data);
+        console.log('main button is clicked2', JSON.parse(data));
         window.open('./employee.html', '_self');
     });
     // const element = document.querySelector('#btn-provider');
