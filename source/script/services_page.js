@@ -132,7 +132,7 @@ function showEmployee(){
         // tg.sendData("data");
         const data2 = tg.initDataUnsafe;
         console.log('main button is clicked', data);
-        console.log('main button is clicked2', data2);
+        console.log('main button is clicked2', data2.user);
         window.open('./employee.html', '_self');
     });
     // const element = document.querySelector('#btn-provider');
