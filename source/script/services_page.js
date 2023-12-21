@@ -130,9 +130,9 @@ function showEmployee(){
         localStorage.setItem('orderInfoServices', JSON.stringify(orderInfo.servicesInfo))
         const data = tg.initData;
         // tg.sendData("data");
-        const data2 = tg.initDataUnsafe;
-        console.log('main button is clicked', data);
-        console.log('main button is clicked2', data2.user);
+        // const data2 = tg.initDataUnsafe;
+        console.log('main button is clicked', JSON.parse(data));
+        // console.log('main button is clicked2', data2.user);
         window.open('./employee.html', '_self');
     });
     // const element = document.querySelector('#btn-provider');
