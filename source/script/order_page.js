@@ -56,8 +56,8 @@ function genMainPage(orderInfo){
         // alert(data.user.first_name);
         const order = {id: orderInfo.servicesInfo.id, user_id: data.user.id};
         // console.log(order);
-        console.log(orderInfo.servicesInfo);
-        console.log(orderInfo.servicesInfo.id);
+        console.log(orderInfo.servicesInfo[0]);
+        console.log(orderInfo.servicesInfo[0].id);
         // fetch('./app/order', {
         //     method: 'POST',
         //     headers: {
