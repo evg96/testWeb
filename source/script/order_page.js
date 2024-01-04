@@ -48,10 +48,11 @@ function genMainPage(orderInfo){
 
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         const data = tg.initData;
-        console.log('data', data);
-        console.log('data.user', data.user);
-        console.log('data.user.id', data.user.id);
-        console.log('data.user.firstname', data.user.firstname);
+        alert(data);
+        // console.log('data', data);
+        // console.log('data.user', data.user);
+        // console.log('data.user.id', data.user.id);
+        // console.log('data.user.firstname', data.user.firstname);
         // tg.sendData("data");
         // console.log('main button is clicked', JSON.parse(data))
     });
