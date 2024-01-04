@@ -48,9 +48,21 @@ function genMainPage(orderInfo){
 
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         // const data = tg.initData;
-        const data = tg.initDataUnsafe
-        alert(data.user.id);
-        alert(data.user.first_name);
+        const data = tg.initDataUnsafe;
+        console.log("service", lsOrderInfoS);
+        console.log("service", lsOrderInfoE);
+        console.log("service", lsOrderInfoT);
+        // alert(data.user.id);
+        // alert(data.user.first_name);
+        // const order = {id: lsOrderInfoS}
+        // fetch('./app/order', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json;charset=utf-8'
+        //       },
+        //       body: JSON.stringify()
+        // })
+        // .then
         // console.log('data', data);
         // console.log('data.user', data.user);
         // console.log('data.user.id', data.user.id);
