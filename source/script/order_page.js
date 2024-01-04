@@ -48,7 +48,7 @@ function genMainPage(orderInfo){
 
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         const data = tg.initData;
-        alert(data);
+        alert(data.user.id, data.user.firstname);
         // console.log('data', data);
         // console.log('data.user', data.user);
         // console.log('data.user.id', data.user.id);
