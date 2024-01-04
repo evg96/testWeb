@@ -54,15 +54,18 @@ function genMainPage(orderInfo){
         const data = tg.initDataUnsafe;
         // alert(data.user.id);
         // alert(data.user.first_name);
-        // const order = {id: lsOrderInfoS}
-        // fetch('./app/order', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json;charset=utf-8'
-        //       },
-        //       body: JSON.stringify()
-        // })
-        // .then
+        const order = {id: orderInfo.servicesInfo.id, user_id: data.user.id}
+        fetch('./app/order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+              },
+              body: JSON.stringify(order)
+        })
+        .then((response) => response.json())
+        .then(() => {
+            window.open('./info.html', '_self');
+        });
         // console.log('data', data);
         // console.log('data.user', data.user);
         // console.log('data.user.id', data.user.id);
