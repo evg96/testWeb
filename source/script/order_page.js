@@ -54,7 +54,8 @@ function genMainPage(orderInfo){
         const data = tg.initDataUnsafe;
         // alert(data.user.id);
         // alert(data.user.first_name);
-        const order = {id: orderInfo.servicesInfo.id, user_id: data.user.id}
+        const order = {id: orderInfo.servicesInfo.id, user_id: data.user.id};
+        console.log(order);
         fetch('./app/order', {
             method: 'POST',
             headers: {
@@ -62,7 +63,7 @@ function genMainPage(orderInfo){
               },
               body: JSON.stringify(order)
         })
-        .then((response) => response.json())
+        // .then((response) => response.json())
         .then(() => {
             window.open('./info.html', '_self');
         });
