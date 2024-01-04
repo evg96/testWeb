@@ -50,7 +50,7 @@ function genMainPage(orderInfo){
         // const data = tg.initData;
         const data = tg.initDataUnsafe
         alert(data.user.id);
-        alert(data.user.firstname);
+        alert(data.user.first_name);
         // console.log('data', data);
         // console.log('data.user', data.user);
         // console.log('data.user.id', data.user.id);
