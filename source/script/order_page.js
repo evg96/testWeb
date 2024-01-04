@@ -49,7 +49,7 @@ function genMainPage(orderInfo){
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         // const data = tg.initData;
         const data = tg.initDataUnsafe
-        alert(data.user.id);
+        alert(data.user.id, data.user.firstname);
         // console.log('data', data);
         // console.log('data.user', data.user);
         // console.log('data.user.id', data.user.id);
