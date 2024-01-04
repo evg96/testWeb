@@ -14,6 +14,9 @@ orderInfo.date = new Date(lsOrderInfoT);
 genMainPage(orderInfo);
 
 function genMainPage(orderInfo){
+    console.log("service", orderInfo);
+    // console.log("employ", lsOrderInfoE);
+    // console.log("timeslots", lsOrderInfoT);
     const main = document.querySelector('main');
     const employeeContent = createCheckEmployee(orderInfo.employee);
     const timeContent = createCheckTime(orderInfo);
@@ -49,9 +52,6 @@ function genMainPage(orderInfo){
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         // const data = tg.initData;
         const data = tg.initDataUnsafe;
-        console.log("service", lsOrderInfoS);
-        console.log("service", lsOrderInfoE);
-        console.log("service", lsOrderInfoT);
         // alert(data.user.id);
         // alert(data.user.first_name);
         // const order = {id: lsOrderInfoS}
