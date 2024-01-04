@@ -131,7 +131,7 @@ function showEmployee(){
         const data = tg.initDataUnsafe;
         // tg.sendData("data");
         // const data2 = tg.initDataUnsafe;
-        console.log('main button is clicked', data.query_id);
+        console.log('main button is clicked', data.user);
         // tg.answerWebAppQuery(data.query_id);
         // console.log('main button is clicked2', JSON.parse(data));
         window.open('./employee.html', '_self');
