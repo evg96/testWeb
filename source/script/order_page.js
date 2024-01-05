@@ -54,7 +54,7 @@ function genMainPage(orderInfo){
         const data = tg.initDataUnsafe;
         // alert(data.user.id);
         // alert(data.user.first_name);
-        const order = {id_employee: orderInfo.lsOrderInfoE, user_id: data.user.id, time: orderInfo.lsOrderInfoT};
+        const order = {id_employee: orderInfo.employee.id, user_id: data.user.id, time: orderInfo.date};
         // console.log(order);
         // console.log(orderInfo.servicesInfo[0]);
         console.log(order);
