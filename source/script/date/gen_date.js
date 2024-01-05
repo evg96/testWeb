@@ -1,7 +1,7 @@
 export class CtsDate{
     constructor(){
         const date = new Date();
-        console.log(date.toUTCString());
+        console.log("UTC", date.toUTCString());
         this.date = new Date(date.toUTCString() + (5*60*1000));
         // this.date = new Date();
     }
