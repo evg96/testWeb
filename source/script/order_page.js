@@ -52,8 +52,8 @@ function genMainPage(orderInfo){
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         // const data = tg.initData;
         const data = tg.initDataUnsafe;
-        orderInfo.servicesInfo.map(function(it){
-            console.log(+it.id);
+        const serviceIDs = orderInfo.servicesInfo.map(function(it){
+            return +it.id;
         })
         // alert(data.user.id);
         // alert(data.user.first_name);
@@ -61,7 +61,7 @@ function genMainPage(orderInfo){
             employee_id: orderInfo.employee.id, 
             client_id: data.user.id, 
             time: orderInfo.date,
-            services: orderInfo.servicesInfo
+            services: serviceIDs
         };
         // console.log(order);
         // console.log(orderInfo.servicesInfo[0]);
