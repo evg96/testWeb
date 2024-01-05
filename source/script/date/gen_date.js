@@ -1,6 +1,6 @@
 export class CtsDate{
     constructor(){
-        this.date = new Date();
+        this.date = new Date(new Date()*60*1000);
     }
     getWeek(){
         const day = this.date.getDay();
