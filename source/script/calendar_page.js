@@ -159,8 +159,8 @@ function orderPage(orderInfo){
         const time = coll[i].dataset.time;
         coll[i].addEventListener('click', function(){
             orderInfo.setTime(time);
-            // localStorage.setItem('orderInfoTimeSlot', orderInfo.date.valueOf())
-            localStorage.setItem('orderInfoTimeSlot', orderInfo.date.valueOf()+orderInfo.date.getTimezoneOffset())
+            localStorage.setItem('orderInfoTimeSlot', orderInfo.date.valueOf())
+            // localStorage.setItem('orderInfoTimeSlot', orderInfo.date.valueOf()+orderInfo.date.getTimezoneOffset())
             window.open('./order.html', '_self');
             // genMainPage(orderInfo);
         });
