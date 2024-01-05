@@ -66,6 +66,7 @@ function genMainPage(orderInfo){
         // console.log(order);
         // console.log(orderInfo.servicesInfo[0]);
         console.log(order);
+        console.log("body", JSON.stringify(order));
 
 
         // fetch('./app/order', {
