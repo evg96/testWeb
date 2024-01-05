@@ -48,7 +48,6 @@ function createDays(availDates, orderInfo){
 function createDayButton(today, availDates){
     let content = '';
     let count = 0;
-    console.log("TODAY IS", today)
     for(let i = 0; i < 40; i++){
         let btnClass = 'date-button unavail';
         if(count < availDates.length){
@@ -58,10 +57,10 @@ function createDayButton(today, availDates){
                 count++;
             }
         }
-
         const week = today.getWeek();
         const day = today.getDay();
         const dataDate = today.dateToISO().split('T')[0];
+        console.log("TODAY IS", today, day, dataDate)
         content += `
         <div class="${btnClass}" role="button" data-date="${dataDate}">
             <div>
