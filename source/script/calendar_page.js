@@ -1,4 +1,4 @@
-import { MSKDate } from './date/gen_date.js';
+import { CtsDate } from './date/gen_date.js';
 import { OrderInfo } from './elements/manage_page.js'
 import { tg } from './telegram.js'
 
@@ -24,10 +24,10 @@ function showDays(orderInfo){
 
 
 function createDays(availDates, orderInfo){ 
-    fetch('./app/today')
-    .then((response) => response.json())
-    .then((data) => {
-        let today = new MSKDate(data.today);
+    // fetch('./app/today')
+    // .then((response) => response.json())
+    // .then((data) => {
+        let today = new CtsDate();
         let content = createDayButton(today, availDates);
         let main = document.querySelector('main');
         main.innerHTML = `<div class="date"></div>
@@ -42,7 +42,7 @@ function createDays(availDates, orderInfo){
             window.history.back();
         })
         showTime(orderInfo);
-    })
+    // })
 }
 
 function createDayButton(today, availDates){
