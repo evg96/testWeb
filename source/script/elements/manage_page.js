@@ -7,7 +7,7 @@ export class OrderInfo{
             photo: '',
         }
         this.date = {
-            // id: 0,
+            id: 0,
             date: Date,
         }
         this.servicesInfo = []
