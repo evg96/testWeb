@@ -3,7 +3,7 @@ export class CtsDate{
         const date = new Date();
         console.log("UTC", date.toUTCString());
         console.log("UTC2", date.getTime());
-        this.date = new Date(date.getTime() + (5*60*1000));
+        this.date = new Date(date.getUTCTime() + (5*60*1000));
         // this.date = new Date();
     }
     getWeek(){
