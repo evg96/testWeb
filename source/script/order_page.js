@@ -52,6 +52,9 @@ function genMainPage(orderInfo){
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         // const data = tg.initData;
         const data = tg.initDataUnsafe;
+        orderInfo.servicesInfo.map(function(it){
+            console.log(+it.id);
+        })
         // alert(data.user.id);
         // alert(data.user.first_name);
         const order = {
