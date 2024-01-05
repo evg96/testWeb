@@ -54,23 +54,28 @@ function genMainPage(orderInfo){
         const data = tg.initDataUnsafe;
         // alert(data.user.id);
         // alert(data.user.first_name);
-        const order = {employee_id: orderInfo.employee.id, client_id: data.user.id, time: orderInfo.date};
+        const order = {
+            employee_id: orderInfo.employee.id, 
+            client_id: data.user.id, 
+            time: orderInfo.date,
+            services: orderInfo.servicesInfo
+        };
         // console.log(order);
         // console.log(orderInfo.servicesInfo[0]);
         console.log(order);
 
 
-        fetch('./app/order', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-              },
-              body: JSON.stringify(order)
-        })
-        // .then((response) => response.json())
-        .then(() => {
-            // window.open('./info.html', '_self');
-        });
+        // fetch('./app/order', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json;charset=utf-8'
+        //       },
+        //       body: JSON.stringify(order)
+        // })
+        // // .then((response) => response.json())
+        // .then(() => {
+        //     // window.open('./info.html', '_self');
+        // });
 
 
         // console.log('data', data);
