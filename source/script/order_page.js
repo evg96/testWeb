@@ -57,8 +57,7 @@ function genMainPage(orderInfo){
         })
         // alert(data.user.id);
         // alert(data.user.first_name);
-        console.log(orderInfo.date.getTime())
-        console.log(orderInfo.date.getTimezoneOffset())
+        console.log(orderInfo.date)
         const order = {
             employee_id: orderInfo.employee.id, 
             client_id: data.user.id, 

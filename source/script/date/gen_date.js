@@ -1,13 +1,6 @@
 export class CtsDate{
     constructor(){
-        const date = new Date();
-        console.log("timezone", date.getHours());
-        console.log("UTC", date.getUTCHours());
-        console.log("parse", Date.parse(date));
-        console.log("timeISO", date.toISOString());
-        console.log("time", date.toString());
-        this.date = new Date(date.getTime() + (5*60*1000));
-        // this.date = new Date();
+        this.date = new Date();
     }
     getWeek(){
         const day = this.date.getDay();
