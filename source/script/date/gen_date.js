@@ -4,7 +4,8 @@ export class CtsDate{
         console.log("timezone", date.getHours());
         console.log("UTC", date.getUTCHours());
         console.log("parse", Date.parse(date));
-        console.log("time", date.toISOString());
+        console.log("timeISO", date.toISOString());
+        console.log("time", date.toString());
         this.date = new Date(date.getTime() + (5*60*1000));
         // this.date = new Date();
     }

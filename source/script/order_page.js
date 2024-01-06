@@ -66,10 +66,10 @@ function genMainPage(orderInfo){
             services: serviceIDs
         };
         // console.log(order);
-        // console.log(orderInfo.servicesInfo[0]);
-        console.log(order);
-        console.log("body", JSON.stringify(order));
-        console.log(orderInfo.date.toISOString())
+        // // console.log(orderInfo.servicesInfo[0]);
+        // console.log(order);
+        // console.log("body", JSON.stringify(order));
+        // console.log(orderInfo.date.toISOString())
 
 
         // fetch('./app/order', {

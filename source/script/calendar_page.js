@@ -60,7 +60,7 @@ function createDayButton(today, availDates){
         const week = today.getWeek();
         const day = today.getDay();
         const dataDate = today.dateToISO().split('T')[0];
-        console.log("TODAY IS", today, day, dataDate)
+        // console.log("TODAY IS", today, day, dataDate)
         content += `
         <div class="${btnClass}" role="button" data-date="${dataDate}">
             <div>
