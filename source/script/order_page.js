@@ -65,23 +65,24 @@ function genMainPage(orderInfo){
             services: serviceIDs
         };
         console.log(order);
+        console.log(JSON.stringify(order));
         // // console.log(orderInfo.servicesInfo[0]);
         // console.log(order);
         // console.log("body", JSON.stringify(order));
         // console.log(orderInfo.date.toISOString())
 
 
-        // fetch('./app/order', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json;charset=utf-8'
-        //       },
-        //       body: JSON.stringify(order)
-        // })
-        // // .then((response) => response.json())
-        // .then(() => {
-        //     // window.open('./info.html', '_self');
-        // });
+        fetch('./app/order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+              },
+              body: JSON.stringify(order)
+        })
+        // .then((response) => response.json())
+        .then(() => {
+            // window.open('./info.html', '_self');
+        });
 
 
         // console.log('data', data);
