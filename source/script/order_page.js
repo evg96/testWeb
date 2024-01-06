@@ -64,7 +64,7 @@ function genMainPage(orderInfo){
             time: orderInfo.date,
             services: serviceIDs
         };
-        // console.log(order);
+        console.log(order);
         // // console.log(orderInfo.servicesInfo[0]);
         // console.log(order);
         // console.log("body", JSON.stringify(order));
