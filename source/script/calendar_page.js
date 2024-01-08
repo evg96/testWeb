@@ -94,7 +94,7 @@ function showTime(orderInfo){
             let welMes = document.querySelector('[class=choose_day]');
             welMes.setAttribute('style', 'display: none')
             orderInfo.date = new Date(date);
-            console.log("mounth", orderInfo.getWeek());
+            console.log("mounth", orderInfo.getDay(), orderInfo.getMounth());
             let totalDur = 0;
             const reqDate = orderInfo.date.toISOString().split('T')[0];
             for(let service of orderInfo.servicesInfo){
