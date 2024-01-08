@@ -92,15 +92,15 @@ function showTime(orderInfo){
     const coll = document.getElementsByClassName('date-button');
     for(let i = 0; i < coll.length; i++){
         const date = coll[i].dataset.date;
-        console.log(date);
+        // console.log(date);
         coll[i].addEventListener('click', function(){
             let dDescr = document.querySelector('[class=date_descr]');
-            dDescr.removeAttribute('visibility');
-            dDescr.innerHTML = `${orderInfo.getDay()} ${orderInfo.getMounth()}`;
             let welMes = document.querySelector('[class=choose_day]');
             welMes.setAttribute('style', 'display: none');
             orderInfo.date = new Date(date);
-            console.log("mounth", orderInfo.getDay(), orderInfo.getMounth());
+            dDescr.removeAttribute('visibility');
+            dDescr.innerHTML = `${orderInfo.getDay()} ${orderInfo.getMounth()}`;
+            // console.log("mounth", orderInfo.getDay(), orderInfo.getMounth());
             let totalDur = 0;
             const reqDate = orderInfo.date.toISOString().split('T')[0];
             for(let service of orderInfo.servicesInfo){
