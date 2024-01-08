@@ -10,7 +10,6 @@
     <link href="../source/styles/footer-info.css" rel="stylesheet" />
     <link href="../source/styles/date.css" rel="stylesheet" />
     <link href="../source/styles/confirmation.css" rel="stylesheet" />
-    <!-- <link href="../source/styles/datatables.min.css" rel="stylesheet" /> -->
     <title>Site</title>
 </head>
 <body>
@@ -20,8 +19,11 @@
                 <!-- <span>Main page</span><button id="back">back</button> -->
             </header>
             <main>
-                <div>
+                <div class="unavail_orders" style="display: none;">
                     <span>Доступных записей на эту дату нет</span>
+                </div>
+                <div class="choose_day">
+                    <span>Выберите удобный день и время</span>
                 </div>
                 <style>
                     .wrapper div{

@@ -76,6 +76,8 @@ function showTime(orderInfo){
     for(let i = 0; i < coll.length; i++){
         const date = coll[i].dataset.date;
         coll[i].addEventListener('click', function(){
+            let welMes = document.querySelector('[class=choose_day]');
+            welMes.setAttribute('style', 'display: none')
             // orderInfo.today = new Date(date);
             orderInfo.date = new Date(date);
             let totalDur = 0;
@@ -87,11 +89,13 @@ function showTime(orderInfo){
             fetch(`./app/time?date=${reqDate}&emplid=${orderInfo.employee.id}&duration=${totalDur}`)
             .then((response) => response.json())
             .then((datas) => {
-                console.log(datas.times)
                 let time = document.querySelector('[class=time]');
+                let timeAvail = document.querySelector('[class=unavail_orders]');
+                
                 // const timesContent = createTimes(datas.times, orderInfo.today);
                 if(datas.times === null){
-                    time.innerHTML = 'Запись на эту дату недоступна';
+                    // time.innerHTML = 'Запись на эту дату недоступна';
+                    timeAvail.setAttribute('style', 'display: block')
                 }else{
                     const timesContent = createTimes(datas.times, orderInfo.date);
                     time.innerHTML = timesContent;
