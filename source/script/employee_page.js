@@ -25,9 +25,9 @@ function showEmpl(){
         Telegram.WebApp.onEvent('backButtonClicked', function(){
             window.history.back();
         });
-        document.getElementById('back').addEventListener('click', function(){
-            window.history.back();
-        });
+        // document.getElementById('back').addEventListener('click', function(){
+        //     window.history.back();
+        // });
         if(datas.length == emplInfo.length){
             date(orderInfo, emplInfo);
         }else{
