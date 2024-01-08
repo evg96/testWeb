@@ -98,7 +98,7 @@ function showTime(orderInfo){
             let welMes = document.querySelector('[class=choose_day]');
             welMes.setAttribute('style', 'display: none');
             orderInfo.date = new Date(date);
-            dDescr.removeAttribute('style', 'visibility');
+            dDescr.setAttribute('style', 'visibility: visible');
             dDescr.innerHTML = `${orderInfo.getDay()} ${orderInfo.getMounth()}`;
             // console.log("mounth", orderInfo.getDay(), orderInfo.getMounth());
             let totalDur = 0;
