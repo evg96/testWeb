@@ -15,7 +15,8 @@ function showDays(orderInfo){
     let main = document.querySelector('main');
     // main.innerHTML = `<div class="date"></div>
     //                   <div class="time"> Выберете дату</div>`
-    main.innerHTML = `<div class="date"></div>
+    main.innerHTML = `<div class="date-descr" style="visibility: hidden;text-align: center; padding-bottom: 5px;">25 декабря</div>
+                     <div class="date"></div>
                      <div class="time"></div>
                      <div class="unavail_orders" style="display: none;">
                      <span>Доступных записей на эту дату нет</span>
@@ -35,7 +36,8 @@ function createDays(availDates, orderInfo){
         let today = new CtsDate();
         let content = createDayButton(today, availDates);
         let main = document.querySelector('main');
-        main.innerHTML = `<div class="date"></div>
+        main.innerHTML = `<div style="visibility: hidden;text-align: center; padding-bottom: 5px;">25 декабря</div>
+                        <div class="date"></div>
                         <div class="time"></div>
                         <div class="unavail_orders" style="display: none;">
                         <span>Доступных записей на эту дату нет</span>
@@ -58,7 +60,7 @@ function createDays(availDates, orderInfo){
 }
 
 function createDayButton(today, availDates){
-    let content = '<div style="text-align: center; padding-bottom: 5px;">25 декабря</div>';
+    let content = '';
     let count = 0;
     for(let i = 0; i < 40; i++){
         let btnClass = 'date-button unavail';
@@ -92,8 +94,11 @@ function showTime(orderInfo){
         const date = coll[i].dataset.date;
         console.log(date);
         coll[i].addEventListener('click', function(){
+            let dDescr = document.querySelector('[class=date-descr]');
+            dDescr.removeAttribute('visibility');
+            dDescr.innerHTML = `${orderInfo.getDay()} ${orderInfo.getMounth()}`;
             let welMes = document.querySelector('[class=choose_day]');
-            welMes.setAttribute('style', 'display: none')
+            welMes.setAttribute('style', 'display: none');
             orderInfo.date = new Date(date);
             console.log("mounth", orderInfo.getDay(), orderInfo.getMounth());
             let totalDur = 0;
