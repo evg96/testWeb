@@ -32,9 +32,9 @@ function genMainPage(orderInfo){
     document.querySelector('#change-service').addEventListener('click', function(){
         window.open('./services.html', '_self');
     });
-    document.getElementById('back').addEventListener('click', function(){
-        window.history.back();
-    });
+    // document.getElementById('back').addEventListener('click', function(){
+    //     window.history.back();
+    // });
     tg.MainButton.text = "Подтвердить запись";
     tg.MainButton.color = "#3390ec";   //#91cee6
     tg.MainButton.isVisible = true;
