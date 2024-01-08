@@ -58,7 +58,7 @@ function createDays(availDates, orderInfo){
 }
 
 function createDayButton(today, availDates){
-    let content = '';
+    let content = '<div style="text-align: center; padding-bottom: 5px;">25 декабря</div>';
     let count = 0;
     for(let i = 0; i < 40; i++){
         let btnClass = 'date-button unavail';
