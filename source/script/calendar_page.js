@@ -24,9 +24,6 @@ function showDays(orderInfo){
 
 
 function createDays(availDates, orderInfo){ 
-    // fetch('./app/today')
-    // .then((response) => response.json())
-    // .then((data) => {
         let today = new CtsDate();
         let content = createDayButton(today, availDates);
         let main = document.querySelector('main');
@@ -42,7 +39,6 @@ function createDays(availDates, orderInfo){
             window.history.back();
         })
         showTime(orderInfo);
-    // })
 }
 
 function createDayButton(today, availDates){

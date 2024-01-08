@@ -1,5 +1,4 @@
 import { OrderInfo } from './elements/manage_page.js'
-import { showFooter, hideFooter } from './elements/footer.js'
 import { tg } from './telegram.js'
 
 const orderInfo = new OrderInfo;
@@ -14,9 +13,6 @@ orderInfo.date = new Date(lsOrderInfoT);
 genMainPage(orderInfo);
 
 function genMainPage(orderInfo){
-    console.log("service", orderInfo);
-    // console.log("employ", lsOrderInfoE);
-    // console.log("timeslots", lsOrderInfoT);
     const main = document.querySelector('main');
     const employeeContent = createCheckEmployee(orderInfo.employee);
     const timeContent = createCheckTime(orderInfo);
@@ -39,13 +35,8 @@ function genMainPage(orderInfo){
     document.getElementById('back').addEventListener('click', function(){
         window.history.back();
     });
-    // showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Подтвердить запись');
-    // document.querySelector('#btn-provider').addEventListener('click', function(){
-    //     Telegram.WebApp.sendData("test data");
-    //     console.log('data is sent')
-    // });
     tg.MainButton.text = "Подтвердить запись";
-    tg.MainButton.color = "#91cee6";
+    tg.MainButton.color = "#3390ec";   //#91cee6
     tg.MainButton.isVisible = true;
 	tg.MainButton.show();
 
@@ -55,42 +46,27 @@ function genMainPage(orderInfo){
         const serviceIDs = orderInfo.servicesInfo.map(function(it){
             return +it.id;
         })
-        // alert(data.user.id);
-        // alert(data.user.first_name);
-        console.log(orderInfo.date)
+        // console.log(orderInfo.date)
         const order = {
             employee_id: orderInfo.employee.id, 
             user_id: data.user.id, 
             time: orderInfo.date,
             services: serviceIDs
         };
-        console.log(order);
-        console.log(JSON.stringify(order));
-        // // console.log(orderInfo.servicesInfo[0]);
         // console.log(order);
-        // console.log("body", JSON.stringify(order));
-        // console.log(orderInfo.date.toISOString())
+        // console.log(JSON.stringify(order));
 
-
-        fetch('./app/order', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-              },
-              body: JSON.stringify(order)
-        })
-        // .then((response) => response.json())
-        .then(() => {
-            // window.open('./info.html', '_self');
-        });
-
-
-        // console.log('data', data);
-        // console.log('data.user', data.user);
-        // console.log('data.user.id', data.user.id);
-        // console.log('data.user.firstname', data.user.firstname);
-        // tg.sendData("data");
-        // console.log('main button is clicked', JSON.parse(data))
+        window.open('./info.html', '_self');
+        // fetch('./app/order', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json;charset=utf-8'
+        //       },
+        //       body: JSON.stringify(order)
+        // })
+        // .then(() => {
+        //     window.open('./info.html', '_self');
+        // });
     });
 }
 
