@@ -35,9 +35,9 @@ function createDays(availDates, orderInfo){
         Telegram.WebApp.onEvent('backButtonClicked', function(){
             window.history.back();
         });
-        document.getElementById('back').addEventListener('click', function(){
-            window.history.back();
-        })
+        // document.getElementById('back').addEventListener('click', function(){
+        //     window.history.back();
+        // })
         showTime(orderInfo);
 }
 
