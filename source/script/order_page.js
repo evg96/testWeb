@@ -60,7 +60,7 @@ function genMainPage(orderInfo){
         console.log(orderInfo.date)
         const order = {
             employee_id: orderInfo.employee.id, 
-            client_id: data.user.id, 
+            user_id: data.user.id, 
             time: orderInfo.date,
             services: serviceIDs
         };
