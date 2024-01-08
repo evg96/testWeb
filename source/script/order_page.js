@@ -46,15 +46,12 @@ function genMainPage(orderInfo){
         const serviceIDs = orderInfo.servicesInfo.map(function(it){
             return +it.id;
         })
-        // console.log(orderInfo.date)
         const order = {
             employee_id: orderInfo.employee.id, 
             user_id: data.user.id, 
             time: orderInfo.date,
             services: serviceIDs
         };
-        // console.log(order);
-        // console.log(JSON.stringify(order));
 
         window.open('./info.html', '_self');
         // fetch('./app/order', {
