@@ -94,10 +94,8 @@ function showTime(orderInfo){
         coll[i].addEventListener('click', function(){
             let welMes = document.querySelector('[class=choose_day]');
             welMes.setAttribute('style', 'display: none')
-            // orderInfo.today = new Date(date);
             orderInfo.date = new Date(date);
             let totalDur = 0;
-            // const reqDate = orderInfo.today.toISOString().split('T')[0];
             const reqDate = orderInfo.date.toISOString().split('T')[0];
             for(let service of orderInfo.servicesInfo){
                 totalDur += service.duration;
@@ -111,9 +109,11 @@ function showTime(orderInfo){
                 // const timesContent = createTimes(datas.times, orderInfo.today);
                 if(datas.times === null){
                     // time.innerHTML = 'Запись на эту дату недоступна';
-                    timeAvail.setAttribute('style', 'display: block')
+                    time.innerHTML = '';
+                    timeAvail.setAttribute('style', 'display: block');
                 }else{
                     const timesContent = createTimes(datas.times, orderInfo.date);
+                    timeAvail.setAttribute('style', 'display: none');
                     time.innerHTML = timesContent;
                 }
                 orderPage(orderInfo);
