@@ -13,8 +13,16 @@ showDays(orderInfo);
 
 function showDays(orderInfo){
     let main = document.querySelector('main');
+    // main.innerHTML = `<div class="date"></div>
+    //                   <div class="time"> Выберете дату</div>`
     main.innerHTML = `<div class="date"></div>
-                      <div class="time"> Выберете дату</div>`
+                     <div class="time"></div>
+                     <div class="unavail_orders" style="display: none;">
+                     <span>Доступных записей на эту дату нет</span>
+                 </div>
+                 <div class="choose_day">
+                     <span>Выберите удобный день и время</span>
+                 </div>`
     fetch(`./app/date?emplid=${orderInfo.employee.id}`)
     .then((response) => response.json())
     .then((datas) => {
@@ -28,7 +36,15 @@ function createDays(availDates, orderInfo){
         let content = createDayButton(today, availDates);
         let main = document.querySelector('main');
         main.innerHTML = `<div class="date"></div>
-                          <div class="time"> Выберете дату</div>`
+                        <div class="time"></div>
+                        <div class="unavail_orders" style="display: none;">
+                        <span>Доступных записей на эту дату нет</span>
+                    </div>
+                    <div class="choose_day">
+                        <span>Выберите удобный день и время</span>
+                    </div>`
+        // main.innerHTML = `<div class="date"></div>
+        //                   <div class="time"> Выберете дату</div>`
         let date = document.querySelector('[class=date]');
         date.innerHTML = content;
         tg.BackButton.show();
