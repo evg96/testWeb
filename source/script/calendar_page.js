@@ -90,6 +90,7 @@ function showTime(orderInfo){
     const coll = document.getElementsByClassName('date-button');
     for(let i = 0; i < coll.length; i++){
         const date = coll[i].dataset.date;
+        console.log(date);
         coll[i].addEventListener('click', function(){
             let welMes = document.querySelector('[class=choose_day]');
             welMes.setAttribute('style', 'display: none')
