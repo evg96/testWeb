@@ -72,7 +72,6 @@ function createDayButton(today, availDates){
         const week = today.getWeek();
         const day = today.getDay();
         const dataDate = today.dateToISO().split('T')[0];
-        // console.log("TODAY IS", today, day, dataDate)
         content += `
         <div class="${btnClass}" role="button" data-date="${dataDate}">
             <div>
@@ -95,6 +94,7 @@ function showTime(orderInfo){
             let welMes = document.querySelector('[class=choose_day]');
             welMes.setAttribute('style', 'display: none')
             orderInfo.date = new Date(date);
+            console.log("mounth", orderInfo.getWeek());
             let totalDur = 0;
             const reqDate = orderInfo.date.toISOString().split('T')[0];
             for(let service of orderInfo.servicesInfo){
@@ -105,10 +105,7 @@ function showTime(orderInfo){
             .then((datas) => {
                 let time = document.querySelector('[class=time]');
                 let timeAvail = document.querySelector('[class=unavail_orders]');
-                
-                // const timesContent = createTimes(datas.times, orderInfo.today);
                 if(datas.times === null){
-                    // time.innerHTML = 'Запись на эту дату недоступна';
                     time.innerHTML = '';
                     timeAvail.setAttribute('style', 'display: block');
                 }else{
@@ -118,7 +115,6 @@ function showTime(orderInfo){
                 }
                 orderPage(orderInfo);
                 })
-            // });
         });
     }
 }
