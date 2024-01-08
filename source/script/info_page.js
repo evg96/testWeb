@@ -12,6 +12,6 @@ function closeApp(){
     tg.BackButton.hide();
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         console.log("close app");
-        tg.closeApp();
+        tg.close();
     })
 }
