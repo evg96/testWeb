@@ -54,16 +54,16 @@ function genMainPage(orderInfo){
         };
 
         window.open('./info.html', '_self');
-        fetch('./app/order', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-              },
-              body: JSON.stringify(order)
-        })
-        .then(() => {
-            window.open('./info.html', '_self');
-        });
+        // fetch('./app/order', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json;charset=utf-8'
+        //       },
+        //       body: JSON.stringify(order)
+        // })
+        // .then(() => {
+        //     window.open('./info.html', '_self');
+        // });
     });
 }
 
