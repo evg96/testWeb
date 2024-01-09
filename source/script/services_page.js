@@ -1,5 +1,4 @@
 import { OrderInfo } from './elements/manage_page.js'
-import { showFooter, hideFooter } from './elements/footer.js'
 import { tg } from './telegram.js'
 const orderInfo = new OrderInfo;
 

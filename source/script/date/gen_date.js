@@ -1,6 +1,6 @@
-export class MSKDate{
-    constructor(today){
-        this.date = new Date(today);
+export class CtsDate{
+    constructor(){
+        this.date = new Date();
     }
     getWeek(){
         const day = this.date.getDay();

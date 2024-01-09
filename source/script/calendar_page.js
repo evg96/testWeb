@@ -1,4 +1,4 @@
-import { MSKDate } from './date/gen_date.js';
+import { CtsDate } from './date/gen_date.js';
 import { OrderInfo } from './elements/manage_page.js'
 import { tg } from './telegram.js'
 
@@ -13,8 +13,17 @@ showDays(orderInfo);
 
 function showDays(orderInfo){
     let main = document.querySelector('main');
-    main.innerHTML = `<div class="date"></div>
-                      <div class="time"> Выберете дату</div>`
+    // main.innerHTML = `<div class="date"></div>
+    //                   <div class="time"> Выберете дату</div>`
+    main.innerHTML = `<div class="date_descr" style="visibility: hidden;text-align: center; padding-bottom: 5px;">25 декабря</div>
+                     <div class="date"></div>
+                     <div class="time"></div>
+                     <div class="unavail_orders" style="display: none;">
+                     <span>Доступных записей на эту дату нет</span>
+                 </div>
+                 <div class="choose_day">
+                     <span>Выберите удобный день и время</span>
+                 </div>`
     fetch(`./app/date?emplid=${orderInfo.employee.id}`)
     .then((response) => response.json())
     .then((datas) => {
@@ -24,25 +33,30 @@ function showDays(orderInfo){
 
 
 function createDays(availDates, orderInfo){ 
-    fetch('./app/today')
-    .then((response) => response.json())
-    .then((data) => {
-        let today = new MSKDate(data.today);
+        let today = new CtsDate();
         let content = createDayButton(today, availDates);
         let main = document.querySelector('main');
-        main.innerHTML = `<div class="date"></div>
-                          <div class="time"> Выберете дату</div>`
+        main.innerHTML = `<div class="date_descr" style="visibility: hidden;text-align: center; padding-bottom: 5px;">25 декабря</div>
+                        <div class="date"></div>
+                        <div class="time"></div>
+                        <div class="unavail_orders" style="display: none;">
+                        <span>Доступных записей на эту дату нет</span>
+                    </div>
+                    <div class="choose_day">
+                        <span>Выберите удобный день и время</span>
+                    </div>`
+        // main.innerHTML = `<div class="date"></div>
+        //                   <div class="time"> Выберете дату</div>`
         let date = document.querySelector('[class=date]');
         date.innerHTML = content;
         tg.BackButton.show();
         Telegram.WebApp.onEvent('backButtonClicked', function(){
             window.history.back();
         });
-        document.getElementById('back').addEventListener('click', function(){
-            window.history.back();
-        })
+        // document.getElementById('back').addEventListener('click', function(){
+        //     window.history.back();
+        // })
         showTime(orderInfo);
-    })
 }
 
 function createDayButton(today, availDates){
@@ -57,7 +71,6 @@ function createDayButton(today, availDates){
                 count++;
             }
         }
-
         const week = today.getWeek();
         const day = today.getDay();
         const dataDate = today.dateToISO().split('T')[0];
@@ -79,11 +92,17 @@ function showTime(orderInfo){
     const coll = document.getElementsByClassName('date-button');
     for(let i = 0; i < coll.length; i++){
         const date = coll[i].dataset.date;
+        // console.log(date);
         coll[i].addEventListener('click', function(){
-            // orderInfo.today = new Date(date);
+            let dDescr = document.querySelector('[class=date_descr]');
+            let welMes = document.querySelector('[class=choose_day]');
+            welMes.setAttribute('style', 'display: none');
             orderInfo.date = new Date(date);
+            dDescr.style.visibility = 'visible';
+            // dDescr.setAttribute('style', 'visibility: visible');
+            dDescr.innerHTML = `${orderInfo.getDay()} ${orderInfo.getMounth()}`;
+            // console.log("mounth", orderInfo.getDay(), orderInfo.getMounth());
             let totalDur = 0;
-            // const reqDate = orderInfo.today.toISOString().split('T')[0];
             const reqDate = orderInfo.date.toISOString().split('T')[0];
             for(let service of orderInfo.servicesInfo){
                 totalDur += service.duration;
@@ -91,18 +110,18 @@ function showTime(orderInfo){
             fetch(`./app/time?date=${reqDate}&emplid=${orderInfo.employee.id}&duration=${totalDur}`)
             .then((response) => response.json())
             .then((datas) => {
-                console.log(datas.times)
                 let time = document.querySelector('[class=time]');
-                // const timesContent = createTimes(datas.times, orderInfo.today);
+                let timeAvail = document.querySelector('[class=unavail_orders]');
                 if(datas.times === null){
-                    time.innerHTML = 'Запись на эту дату недоступна';
+                    time.innerHTML = '';
+                    timeAvail.setAttribute('style', 'display: block');
                 }else{
                     const timesContent = createTimes(datas.times, orderInfo.date);
+                    timeAvail.setAttribute('style', 'display: none');
                     time.innerHTML = timesContent;
                 }
                 orderPage(orderInfo);
                 })
-            // });
         });
     }
 }
