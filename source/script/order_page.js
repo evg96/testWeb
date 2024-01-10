@@ -53,17 +53,17 @@ function genMainPage(orderInfo){
             services: serviceIDs
         };
 
-        window.open('./info.html', '_self');
-        // fetch('./app/order', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json;charset=utf-8'
-        //       },
-        //       body: JSON.stringify(order)
-        // })
-        // .then(() => {
-        //     window.open('./info.html', '_self');
-        // });
+        // window.open('./info.html', '_self');
+        fetch('./app/order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+              },
+              body: JSON.stringify(order)
+        })
+        .then(() => {
+            window.open('./info.html', '_self');
+        });
     });
 }
 
