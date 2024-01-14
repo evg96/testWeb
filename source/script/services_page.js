@@ -7,6 +7,8 @@ const orderInfo = new OrderInfo;
 show();
 
 function show(){
+    console.log(tg.initDataUnsafe);
+    console.log(tg.initData);
     tg.expand();
     localStorage.clear();
     // tg.BackButton.hide();
