@@ -63,8 +63,13 @@ function genMainPage(orderInfo){
               },
               body: JSON.stringify(order)
         })
-        .then(() => {
-            window.open('./info.html', '_self');
+        .then(response => {
+            if(response.ok){
+                window.open('./info.html', '_self');
+            }else{
+                alert('Что-то пошло не так');
+                tg.close();
+            }
         });
     });
 }
