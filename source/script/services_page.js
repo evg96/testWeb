@@ -7,9 +7,6 @@ const orderInfo = new OrderInfo;
 show();
 
 function show(){
-    console.log(tg.initDataUnsafe);
-    console.log(tg.initData);
-    console.log("WebApp", window.Telegram.WebApp);
     tg.expand();
     localStorage.clear();
     // tg.BackButton.hide();

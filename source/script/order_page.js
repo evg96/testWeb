@@ -57,7 +57,8 @@ function genMainPage(orderInfo){
         fetch('./app/order', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json;charset=utf-8'
+                'Content-Type': 'application/json;charset=utf-8',
+                'Telegram-Data': tg.initData
               },
               body: JSON.stringify(order)
         })
