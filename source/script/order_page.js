@@ -54,11 +54,12 @@ function genMainPage(orderInfo){
         };
 
         // window.open('./info.html', '_self');
+        console.log('tgData', tg.initData)
         fetch('./app/order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                'Telegram-Data': tg.initData
+                'Telegram-Data': tg.initData,
               },
               body: JSON.stringify(order)
         })
