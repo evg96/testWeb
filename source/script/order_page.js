@@ -42,19 +42,17 @@ function genMainPage(orderInfo){
 
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         // const data = tg.initData;
-        const data = tg.initDataUnsafe;
+        // const data = tg.initDataUnsafe;
         const serviceIDs = orderInfo.servicesInfo.map(function(it){
             return +it.id;
         })
         const order = {
             employee_id: orderInfo.employee.id, 
-            user_id: data.user.id, 
+            // user_id: data.user.id, 
             time: orderInfo.date,
             services: serviceIDs
         };
 
-        // window.open('./info.html', '_self');
-        console.log('tgData', tg.initData)
         fetch('./app/order', {
             method: 'POST',
             headers: {
@@ -67,7 +65,7 @@ function genMainPage(orderInfo){
             if(response.ok){
                 window.open('./info.html', '_self');
             }else{
-                alert('Что-то пошло не так');
+                alert('Что-то пошло не так.\nПопробуйте снова.');
                 tg.close();
             }
         });
