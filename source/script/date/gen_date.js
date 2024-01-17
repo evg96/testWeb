@@ -2,7 +2,7 @@ export class CtsDate{
     constructor(){
         const d = new Date();
         // d.getTime().valueOf()-date.getTimezoneOffset()*60000;
-        this.date = new Date(d.getTime().valueOf()-date.getTimezoneOffset()*60000);
+        this.date = new Date(d.getTime().valueOf()-d.getTimezoneOffset()*60000);
     }
     getWeek(){
         const day = this.date.getDay();
