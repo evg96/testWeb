@@ -73,7 +73,9 @@ function createDayButton(today, availDates){
         }
         const week = today.getWeek();
         const day = today.getDay();
+        // const dataDate = today.dateToISO().split('T')[0];
         const dataDate = today.dateToISO().split('T')[0];
+        date.getTime().valueOf()-date.getTimezoneOffset()*60000;
         content += `
         <div class="${btnClass}" role="button" data-date="${dataDate}">
             <div>

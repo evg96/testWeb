@@ -41,14 +41,11 @@ function genMainPage(orderInfo){
 	tg.MainButton.show();
 
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
-        // const data = tg.initData;
-        // const data = tg.initDataUnsafe;
         const serviceIDs = orderInfo.servicesInfo.map(function(it){
             return +it.id;
         })
         const order = {
             employee_id: orderInfo.employee.id, 
-            // user_id: data.user.id, 
             time: orderInfo.date,
             services: serviceIDs
         };
