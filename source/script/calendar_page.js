@@ -45,8 +45,6 @@ function createDays(availDates, orderInfo){
                     <div class="choose_day">
                         <span>Выберите удобный день и время</span>
                     </div>`
-        // main.innerHTML = `<div class="date"></div>
-        //                   <div class="time"> Выберете дату</div>`
         let date = document.querySelector('[class=date]');
         date.innerHTML = content;
         tg.BackButton.show();
@@ -72,10 +70,8 @@ function createDayButton(today, availDates){
             }
         }
         const week = today.getWeek();
-        const day = today.getDay();
-        // const dataDate = today.dateToISO().split('T')[0];
+        const day = today.getDay();b
         const dataDate = today.dateToISO().split('T')[0];
-        // date.getTime().valueOf()-date.getTimezoneOffset()*60000;
         content += `
         <div class="${btnClass}" role="button" data-date="${dataDate}">
             <div>
