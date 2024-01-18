@@ -21,6 +21,7 @@
 } */
 
 h3{
+    margin-top: 15px;
     font-family: 'Montserrat', sans-serif;
     /* font-style: normal; */
     font-weight: 600;
@@ -112,7 +113,7 @@ h3{
     /* border-bottom: 1px solid rgb(112, 224, 20); */
     float: left;
     width: 98%;
-    margin: 5px 1% 0 1%;
+    /* margin: 5px 1% 0 1%; */
 }
 
 /* .information h4{
@@ -136,6 +137,7 @@ h3{
 .description{
     float: left;
     width: 80%;
+    margin-top: 5px;
     /* margin: 0 10%; */
 }
 
