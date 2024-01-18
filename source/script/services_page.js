@@ -27,8 +27,8 @@ function showServices(datas) {
 function expandList(){ 
     let coll = document.getElementsByClassName('collapsible');
     if(coll.length == 1){
-        this.classList.toggle('active');
-        let content = this.nextElementSibling;
+        coll.classList.toggle('active');
+        let content = coll.nextElementSibling;
         if(content.style.maxHeight){
             content.style.maxHeight = null;
         }else{
