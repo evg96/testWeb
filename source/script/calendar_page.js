@@ -180,7 +180,8 @@ function orderPage(orderInfo){
                 window.open('./order.html', '_self');
                 // genMainPage(orderInfo);
             });
+        }else{
+            console.log('unavail date');
         }
-
     }
 }
