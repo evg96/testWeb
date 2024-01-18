@@ -44,7 +44,7 @@ function listServices(){
     for(let i = 0; i < coll.length; i++){
         coll[i].addEventListener('click', function(){
             const id = coll[i].querySelector('[class=description]').dataset.id;
-            const checkbox = coll[i].querySelector('[class=checkboxstyle]');
+            const checkbox = coll[i].querySelector('[class=real-checkbox]');
             const priceSelector = coll[i].querySelector('[class=price]');
             const duration = coll[i].querySelector('[class=duration]').dataset.duration;
             const title = coll[i].querySelector('h6').innerText;
