@@ -61,7 +61,8 @@
 }
 
 h3{
-    /* font-style: normal; */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
     font-weight: 600;
     font-size: 17px;
     line-height: 22px;
@@ -118,13 +119,13 @@ h3{
     border-bottom: 1px solid rgb(194, 190, 190);
     float: left;
     width: 98%;
-    margin: 20px 1% 0 1%;
+    margin: 5px 1% 0 1%;
 }
 
-.information h4{
+/* .information h4{
     float: left;
     width: 70%;
-}
+} */
 
 /* .information:hover{
     color: red;
