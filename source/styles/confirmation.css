@@ -3,6 +3,10 @@ body{
     font-size: 1em;
 }
 
+.container{
+    background-color: #f6f6f6;
+}
+
 @media (max-width: 425px){
     body{
         font-size: 0.9em;
