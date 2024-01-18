@@ -99,6 +99,7 @@
 
 .information{
     border-bottom: 1px solid rgb(194, 190, 190);
+    /* border-bottom: 1px solid rgb(112, 224, 20); */
     float: left;
     width: 98%;
     margin: 20px 1% 0 1%;
@@ -110,7 +111,7 @@
 }
 
 .information:hover{
-    color: red;
+    color: rgb(92, 14, 216);
     /* border: 1px solid black; */
 }
 
@@ -128,7 +129,12 @@
     /* margin: 0 10%; */
 }
 
-input[disabled]{
+/* input[disabled]{
+    color: red;
+    background-color: black;
+} */
+
+input{
     /* outline:1px solid red; */
     color: red;
     background-color: black;

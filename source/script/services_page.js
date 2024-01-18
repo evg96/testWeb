@@ -112,12 +112,15 @@ function addServices(data){
     const duration = `<span class="duration">${hours} ${minutes}</span>`
     return `
     <div class="information" role="button">
-        <input type="checkbox" class="checkboxstyle" disabled />
-        <h6>${data.title}</h6>
-        <div class="description" data-id="${data.id}">
-            <span class="price">${data.price} ₽</span>
-            <span class="duration" data-duration="${data.duration}">${duration}</span>
-        </div>
+        <label>
+            <input type="checkbox" class="real-checkbox"/>
+            <span class="custom-checkbox"></span>
+            <h6>${data.title}</h6>
+            <div class="description" data-id="${data.id}">
+                <span class="price">${data.price} ₽</span>
+                <span class="duration" data-duration="${data.duration}">${duration}</span>
+            </div>
+        </label>
     </div>
     `
 }

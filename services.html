@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link href="../source/styles/style.css" rel="stylesheet" />
-    <link href="../source/styles/services.css" rel="stylesheet">
+    <link href="../source/styles/services_copy.css" rel="stylesheet">
     <link href="../source/styles/provider.css" rel="stylesheet" />
     <link href="../source/styles/footer-info.css" rel="stylesheet" />
     <link href="../source/styles/date.css" rel="stylesheet" />
@@ -28,20 +28,27 @@
                             <button class="collapsible" style="background-color:rgb(228, 228, 238)">Стрижки</button>
                             <div class="content" id="services_Стрижки">
                                 <div class="information" role="button">
-                                    <input type="checkbox" class="checkboxstyle" disabled />
-                                    <h6>Под одну насадку</h6>
-                                    <div class="description" data-id="${data.id}">
-                                        <span class="price">250 ₽</span>
-                                        <span class="duration" data-duration="${data.duration}">30 мин</span>
-                                    </div>
+                                    <label>
+                                        <input type="checkbox" class="real-checkbox"/>
+                                        <span class="custom-checkbox"></span>
+                                        <h6>Под одну насадку</h6>
+                                        <div class="description" data-id="${data.id}">
+                                            <span class="price">250 ₽</span>
+                                            <span class="duration" data-duration="${data.duration}">30 мин</span>
+                                        </div>
+                                    </label>
+
                                 </div>
                                 <div class="information" role="button">
-                                    <input type="checkbox" class="checkboxstyle" disabled />
-                                    <h6>Под одну насадку</h6>
-                                    <div class="description" data-id="${data.id}">
-                                        <span class="price">250 ₽</span>
-                                        <span class="duration" data-duration="${data.duration}">30 мин</span>
-                                    </div>
+                                    <label>
+                                        <input type="checkbox" class="real-checkbox"/>
+                                        <span class="custom-checkbox"></span>
+                                        <h6>Под одну насадку</h6>
+                                        <div class="description" data-id="${data.id}">
+                                            <span class="price">250 ₽</span>
+                                            <span class="duration" data-duration="${data.duration}">30 мин</span>
+                                        </div>
+                                    </label>
                                 </div>
                             </div>
                         </div>               
