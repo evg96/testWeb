@@ -21,6 +21,7 @@ function genMainPage(orderInfo){
     main.innerHTML = content;
     tg.BackButton.show();
     Telegram.WebApp.onEvent('backButtonClicked', function(){
+        tg.MainButton.hide();
         window.history.back();
     });
     document.querySelector('#change-employee').addEventListener('click', function(){
