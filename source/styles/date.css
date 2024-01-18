@@ -1,4 +1,6 @@
-
+/* html{
+    background-color: #fff;
+} */
 
 .time-button{
     width: 23%;
@@ -22,7 +24,6 @@
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
-
     width: 95%;
     margin: 0 2.5%;
     padding-bottom: 15px;
@@ -47,24 +48,25 @@
     text-align: center;
     border-radius: 10px;
     /* border: 1px solid black; */
-    background-color: rgb(146, 146, 137, 0.3);
+    background-color: #f6f6f6
+    /* background-color: rgba(219, 219, 207, 0.3); */
 }
 
-.date-button:focus{
+/* .date-button:focus{
     background-color: blue;
-}
+} */
 
 .date-button:hover{
-    background-color: blue;
+    background-color: #196dff;
 }
 
-.date-button:visited{
+/* .date-button:visited{
     background-color: blue;
 }
 
 .date-button:active{
     background-color: blue;
-}
+} */
 
 .date-button>div{
     margin-top: 8px;
