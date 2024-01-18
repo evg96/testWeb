@@ -75,7 +75,7 @@ function createCheckEmployee(employee){
     <div class="check-barber">
         <div class="major-check">
             <div class="check-1">
-                <img class="barber-img" src="../static/images/male_empty.png" alt="">
+                <img class="barber-img" src="../source/static/images/male_empty.png" alt="">
                 <div class="info">
                     <p class="title">${employee.name}</p>
                     <p>${employee.role}</p>
@@ -115,7 +115,7 @@ function createCheckTime(orderInfo){
                 </div>
             </div>
             <div class="check-2" id="change-date">
-                <img class="edit-icon" src="../static/images/edit-2-svgrepo-com.svg" alt="">
+                <img class="edit-icon" src="../source/static/images/edit-2-svgrepo-com.svg" alt="">
             </div>
         </div>
     </div>
@@ -127,7 +127,7 @@ function createCheckServices(orderInfo){
     let count = 0;
         let editIcon = `
         <div class="check-2" id="change-service">
-            <img class="edit-icon" src="../static/images/edit-2-svgrepo-com.svg" alt="">
+            <img class="edit-icon" src="../source/static/images/edit-2-svgrepo-com.svg" alt="">
         </div>
         `
     for(let service of orderInfo.servicesInfo){
