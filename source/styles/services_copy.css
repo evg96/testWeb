@@ -72,7 +72,7 @@ h3{
 .collapsible:hover{
     /* background-color: #f9f9f9; */
     /* background-color:rgb(228, 228, 238); */
-    background-color: #4889fa;
+    background-color: #8eb1ee;
     /* color: red; */
 }
 .content{
@@ -99,6 +99,7 @@ h3{
 } */
 
 .information:hover{
+    background-color: #c9d9f5;
     /* color: rgb(92, 14, 216); */
     /* background-color: #4889fa; */
     /* border: 1px solid black; */
