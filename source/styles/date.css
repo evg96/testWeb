@@ -3,7 +3,7 @@
 } */
 
 .time-button{
-    width: 23%;
+    width: 22%;
     margin: 1%;
     border-radius: 10px;
     /* background-color: rgba(218, 209, 209, 0.3); */
@@ -14,11 +14,11 @@
 }
 
 .time-button:hover{
-    background-color: rgba(218, 209, 209, 0.5);
+    /* background-color: rgba(218, 209, 209, 0.5); */
 }
 
 .time-button:active{
-    background-color: rgba(218, 209, 209, 0.7);
+    /* background-color: rgba(218, 209, 209, 0.7); */
 }
 
 .time{
