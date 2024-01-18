@@ -26,16 +26,26 @@ function showServices(datas) {
 
 function expandList(){ 
     let coll = document.getElementsByClassName('collapsible');
-    for(let i = 0; i < coll.length; i++){
-        coll[i].addEventListener('click', function(){
-            this.classList.toggle('active');
-            let content = this.nextElementSibling;
-            if(content.style.maxHeight){
-                content.style.maxHeight = null;
-            }else{
-                content.style.maxHeight = content.scrollHeight + 'px';
-            }
-        })
+    if(coll.length == 1){
+        this.classList.toggle('active');
+        let content = this.nextElementSibling;
+        if(content.style.maxHeight){
+            content.style.maxHeight = null;
+        }else{
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }
+    }else{
+        for(let i = 0; i < coll.length; i++){
+            coll[i].addEventListener('click', function(){
+                this.classList.toggle('active');
+                let content = this.nextElementSibling;
+                if(content.style.maxHeight){
+                    content.style.maxHeight = null;
+                }else{
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            })
+        }
     }
 }
 
@@ -68,35 +78,6 @@ function listServices(){
         })
     }
 }
-
-// function listServices(){
-//     let coll = document.getElementsByClassName('information');
-//     for(let i = 0; i < coll.length; i++){
-//         coll[i].addEventListener('click', function(){
-//             const id = coll[i].querySelector('[class=description]').dataset.id;
-//             const checkbox = coll[i].querySelector('[class=real-checkbox]');
-//             const priceSelector = coll[i].querySelector('[class=price]');
-//             const duration = coll[i].querySelector('[class=duration]').dataset.duration;
-//             const title = coll[i].querySelector('h3').innerText;
-//             checkbox.checked == true ? checkbox.checked = false : checkbox.checked = true;
-//             const price = getPrice(priceSelector.innerHTML);
-//             if (checkbox.checked){
-//                 orderInfo.addService(id, title, price, duration)
-//             }else{
-//                 orderInfo.deleteService(id)
-//             }
-//             if (orderInfo.getNumberOfServices() > 0){
-//                 tg.MainButton.text = `Выбрано услуг: ${orderInfo.getNumberOfServices()}                  Цена: ${orderInfo.getFullPrice()} ₽`;
-//                 tg.MainButton.color = "#3390ec";
-//                 tg.MainButton.isVisible = true;
-//                 tg.MainButton.show();
-//                 showEmployee();
-//             }else{
-//                 tg.MainButton.hide();
-//             }
-//         })
-//     }
-// }
 
 function displayCategories(datas) {
     const element = document.querySelector('#accordion');
