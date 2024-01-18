@@ -26,10 +26,7 @@ function showServices(datas) {
 
 function expandList(){ 
     let coll = document.getElementsByClassName('collapsible');
-    console.log(coll);
-    
     if(coll.length == 1){
-        console.log(coll.length);
         coll[0].classList.add('active');
         let content = coll[0].nextElementSibling;
         if(content.style.maxHeight){
@@ -64,10 +61,8 @@ function listServices(){
             const price = getPrice(priceSelector.innerHTML);
             if (checkbox.checked){
                 orderInfo.addService(id, title, price, duration);
-                console.log("checkbox checked", id);
             }else{
                 orderInfo.deleteService(id);
-                console.log("checkbox not checked", id);
             }
             if (orderInfo.getNumberOfServices() > 0){
                 tg.MainButton.text = `Выбрано услуг: ${orderInfo.getNumberOfServices()}                  Цена: ${orderInfo.getFullPrice()} ₽`;
@@ -143,7 +138,6 @@ function showEmployee(){
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         localStorage.setItem('orderInfoServices', JSON.stringify(orderInfo.servicesInfo))
         const data = tg.initDataUnsafe;
-        console.log('main button is clicked', data.user);
         window.open('./employee.html', '_self');
     });
 }
