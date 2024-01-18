@@ -48,10 +48,22 @@ function listServices(){
             const priceSelector = coll[i].querySelector('[class=price]');
             const duration = coll[i].querySelector('[class=duration]').dataset.duration;
             const title = coll[i].querySelector('h3').innerText;
+            const price = getPrice(priceSelector.innerHTML);
             if (checkbox.checked){
+                orderInfo.addService(id, title, price, duration);
                 console.log("checkbox checked", id);
             }else{
+                orderInfo.deleteService(id);
                 console.log("checkbox not checked", id);
+            }
+            if (orderInfo.getNumberOfServices() > 0){
+                tg.MainButton.text = `Выбрано услуг: ${orderInfo.getNumberOfServices()}                  Цена: ${orderInfo.getFullPrice()} ₽`;
+                tg.MainButton.color = "#3390ec";
+                tg.MainButton.isVisible = true;
+                tg.MainButton.show();
+                showEmployee();
+            }else{
+                tg.MainButton.hide();
             }
         })
     }
