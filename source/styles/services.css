@@ -20,6 +20,16 @@
     width: 28px;
 } */
 
+h6{
+    font-size: 1em;
+}
+
+@media (max-width: 425px){
+    h6{
+        font-size: 0.9em;
+    }
+}
+
 .real-checkbox{
     width: 0;
     height: 0;
@@ -109,10 +119,9 @@
     width: 70%;
 }
 
-.information:hover{
+/* .information:hover{
     color: red;
-    /* border: 1px solid black; */
-}
+} */
 
 .price{
     color: blue;
@@ -128,11 +137,10 @@
     /* margin: 0 10%; */
 }
 
-input[disabled]{
-    /* outline:1px solid red; */
+/* input[disabled]{
     color: red;
     background-color: black;
-}
+} */
 
 .srv-container{
     margin: 0 25px;
