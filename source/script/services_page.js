@@ -42,6 +42,7 @@ function expandList(){
 function listServices(){
     let coll = document.getElementsByClassName('information');
     for(let i = 0; i < coll.length; i++){
+        console.log("coll[i]", coll[i])
         coll[i].addEventListener('click', function(){
             const id = coll[i].querySelector('[class=description]').dataset.id;
             const checkbox = coll[i].querySelector('[class=real-checkbox]');
