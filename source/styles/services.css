@@ -44,7 +44,8 @@
 .active,
 .collapsible:hover{
     /* background-color: #f9f9f9; */
-    color: red;
+    background-color:rgb(228, 228, 238)
+    /* color: red; */
 }
 .content{
     padding: 0 18px;

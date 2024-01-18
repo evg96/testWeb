@@ -26,7 +26,6 @@ function showServices(datas) {
 
 function expandList(){ 
     let coll = document.getElementsByClassName('collapsible');
-
     for(let i = 0; i < coll.length; i++){
         coll[i].addEventListener('click', function(){
             this.classList.toggle('active');
@@ -61,11 +60,9 @@ function listServices(){
                 tg.MainButton.color = "#3390ec";
                 tg.MainButton.isVisible = true;
                 tg.MainButton.show();
-                // showFooter(orderInfo.getNumberOfServices(), orderInfo.getFullPrice(), 'Выбрать мастера');
                 showEmployee();
             }else{
                 tg.MainButton.hide();
-                // hideFooter();
             }
         })
     }
@@ -129,18 +126,9 @@ function showEmployee(){
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         localStorage.setItem('orderInfoServices', JSON.stringify(orderInfo.servicesInfo))
         const data = tg.initDataUnsafe;
-        // tg.sendData("data");
-        // const data2 = tg.initDataUnsafe;
         console.log('main button is clicked', data.user);
-        // tg.answerWebAppQuery(data.query_id);
-        // console.log('main button is clicked2', JSON.parse(data));
         window.open('./employee.html', '_self');
     });
-    // const element = document.querySelector('#btn-provider');
-    // element.addEventListener('click', function(){
-    //     localStorage.setItem('orderInfoServices', JSON.stringify(orderInfo.servicesInfo))
-    //     window.open('./employee.html', '_self');
-    // });
 }
 
 

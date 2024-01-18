@@ -3,7 +3,7 @@ body{
     font-size: 1em;
 }
 
-@media (min-width: 420px){
+@media (max-width: 425px){
     body{
         font-size: 0.9em;
     }
