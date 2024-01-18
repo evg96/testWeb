@@ -82,7 +82,7 @@ function createCheckEmployee(employee){
                 </div>
             </div>
             <div class="check-2" id="change-employee" role="button">
-                <img class="edit-icon" src="../static/images/edit-2-svgrepo-com.svg" alt="">
+                <img class="edit-icon" src="..source/static/images/edit-2-svgrepo-com.svg" alt="">
             </div>
         </div>
     </div>
