@@ -115,7 +115,7 @@ function addServices(data){
         <label>
             <input type="checkbox" class="real-checkbox"/>
             <span class="custom-checkbox"></span>
-            <h6>${data.title}</h6>
+            <h3>${data.title}</h3>
             <div class="description" data-id="${data.id}">
                 <span class="price">${data.price} ₽</span>
                 <span class="duration" data-duration="${data.duration}">${duration}</span>

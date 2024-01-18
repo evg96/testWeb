@@ -20,9 +20,9 @@
     width: 28px;
 } */
 
-h6{
+/* h6{
     font-size: 1em;
-}
+} */
 
 .real-checkbox{
     width: 0;
@@ -60,11 +60,18 @@ h6{
     transition: 0.2s ease-in;
 }
 
-@media (max-width: 425px){
+h3{
+    /* font-style: normal; */
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+}
+
+/* @media (max-width: 425px){
     h6{
         font-size: 0.9em;
     }
-}
+} */
 
 .real-checkbox:checked + .custom-checkbox::before {
     transform: translate(-50%, -50%) scale(1);

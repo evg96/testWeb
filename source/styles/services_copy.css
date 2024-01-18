@@ -20,6 +20,13 @@
     width: 28px;
 } */
 
+h3{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+}
+
 .real-checkbox{
     width: 0;
     height: 0;
