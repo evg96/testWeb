@@ -13,6 +13,12 @@ body{
     }
 }
 
+@media (max-width: 375px){
+    body{
+        font-size: 0.8em;
+    }
+}
+
 .check-barber{
     background-color: #fff;
     width: 90%;
