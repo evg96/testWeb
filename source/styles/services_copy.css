@@ -51,7 +51,7 @@ h3{
 
 .collapsible{
     /* background-color: #f1f1f1; */
-    background-color: #f6f6f6;
+    /* background-color: #f6f6f6; */
     color: black;
     /* cursor: pointer; */
     padding: 18px;
@@ -71,7 +71,8 @@ h3{
 .active,
 .collapsible:hover{
     /* background-color: #f9f9f9; */
-    background-color:rgb(228, 228, 238)
+    /* background-color:rgb(228, 228, 238); */
+    background-color: #4889fa;
     /* color: red; */
 }
 .content{
@@ -98,7 +99,8 @@ h3{
 } */
 
 .information:hover{
-    color: rgb(92, 14, 216);
+    /* color: rgb(92, 14, 216); */
+    /* background-color: #4889fa; */
     /* border: 1px solid black; */
 }
 
