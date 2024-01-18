@@ -73,7 +73,9 @@ function createDayButton(today, availDates){
         }
         const week = today.getWeek();
         const day = today.getDay();
+        // const dataDate = today.dateToISO().split('T')[0];
         const dataDate = today.dateToISO().split('T')[0];
+        // date.getTime().valueOf()-date.getTimezoneOffset()*60000;
         content += `
         <div class="${btnClass}" role="button" data-date="${dataDate}">
             <div>
@@ -99,9 +101,7 @@ function showTime(orderInfo){
             welMes.setAttribute('style', 'display: none');
             orderInfo.date = new Date(date);
             dDescr.style.visibility = 'visible';
-            // dDescr.setAttribute('style', 'visibility: visible');
             dDescr.innerHTML = `${orderInfo.getDay()} ${orderInfo.getMounth()}`;
-            // console.log("mounth", orderInfo.getDay(), orderInfo.getMounth());
             let totalDur = 0;
             const reqDate = orderInfo.date.toISOString().split('T')[0];
             for(let service of orderInfo.servicesInfo){
