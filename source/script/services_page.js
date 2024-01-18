@@ -39,19 +39,62 @@ function expandList(){
     }
 }
 
+function listServices(){
+    let coll = document.getElementsByClassName('information');
+    for(let i = 0; i < coll.length; i++){
+        const id = coll[i].querySelector('[class=description]').dataset.id;
+        const checkbox = coll[i].querySelector('[class=real-checkbox]');
+        const priceSelector = coll[i].querySelector('[class=price]');
+        const duration = coll[i].querySelector('[class=duration]').dataset.duration;
+        const title = coll[i].querySelector('h3').innerText;
+        if (checkbox.checked){
+            console.log(getPrice(priceSelector.innerHTML))
+        }
+    }
+
+    // for(let i = 0; i < coll.length; i++){
+    //     if (checkbox.checked){
+    //         console.log(getPrice(priceSelector.innerHTML))
+    //     }
+    // }
+
+    //     console.log(coll[i].querySelector('[class=real-checkbox]'));
+
+        // coll[i].addEventListener('click', function(){
+        //     const id = coll[i].querySelector('[class=description]').dataset.id;
+        //     const checkbox = coll[i].querySelector('[class=real-checkbox]');
+        //     const priceSelector = coll[i].querySelector('[class=price]');
+        //     const duration = coll[i].querySelector('[class=duration]').dataset.duration;
+        //     const title = coll[i].querySelector('h3').innerText;
+        //     checkbox.checked == true ? checkbox.checked = false : checkbox.checked = true;
+        //     const price = getPrice(priceSelector.innerHTML);
+        //     if (checkbox.checked){
+        //         orderInfo.addService(id, title, price, duration)
+        //     }else{
+        //         orderInfo.deleteService(id)
+        //     }
+        //     if (orderInfo.getNumberOfServices() > 0){
+        //         tg.MainButton.text = `Выбрано услуг: ${orderInfo.getNumberOfServices()}                  Цена: ${orderInfo.getFullPrice()} ₽`;
+        //         tg.MainButton.color = "#3390ec";
+        //         tg.MainButton.isVisible = true;
+        //         tg.MainButton.show();
+        //         showEmployee();
+        //     }else{
+        //         tg.MainButton.hide();
+        //     }
+        // })
+    // }
+}
+
 // function listServices(){
 //     let coll = document.getElementsByClassName('information');
 //     for(let i = 0; i < coll.length; i++){
-
-//     }
-//         console.log(coll[i].querySelector('[class=real-checkbox]'));
-
 //         coll[i].addEventListener('click', function(){
 //             const id = coll[i].querySelector('[class=description]').dataset.id;
 //             const checkbox = coll[i].querySelector('[class=real-checkbox]');
 //             const priceSelector = coll[i].querySelector('[class=price]');
 //             const duration = coll[i].querySelector('[class=duration]').dataset.duration;
-//             const title = coll[i].querySelector('h6').innerText;
+//             const title = coll[i].querySelector('h3').innerText;
 //             checkbox.checked == true ? checkbox.checked = false : checkbox.checked = true;
 //             const price = getPrice(priceSelector.innerHTML);
 //             if (checkbox.checked){
@@ -71,35 +114,6 @@ function expandList(){
 //         })
 //     }
 // }
-
-function listServices(){
-    let coll = document.getElementsByClassName('information');
-    for(let i = 0; i < coll.length; i++){
-        coll[i].addEventListener('click', function(){
-            const id = coll[i].querySelector('[class=description]').dataset.id;
-            const checkbox = coll[i].querySelector('[class=real-checkbox]');
-            const priceSelector = coll[i].querySelector('[class=price]');
-            const duration = coll[i].querySelector('[class=duration]').dataset.duration;
-            const title = coll[i].querySelector('h3').innerText;
-            checkbox.checked == true ? checkbox.checked = false : checkbox.checked = true;
-            const price = getPrice(priceSelector.innerHTML);
-            if (checkbox.checked){
-                orderInfo.addService(id, title, price, duration)
-            }else{
-                orderInfo.deleteService(id)
-            }
-            if (orderInfo.getNumberOfServices() > 0){
-                tg.MainButton.text = `Выбрано услуг: ${orderInfo.getNumberOfServices()}                  Цена: ${orderInfo.getFullPrice()} ₽`;
-                tg.MainButton.color = "#3390ec";
-                tg.MainButton.isVisible = true;
-                tg.MainButton.show();
-                showEmployee();
-            }else{
-                tg.MainButton.hide();
-            }
-        })
-    }
-}
 
 function displayCategories(datas) {
     const element = document.querySelector('#accordion');
