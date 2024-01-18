@@ -171,13 +171,16 @@ function createTimeButton(today, times){
 function orderPage(orderInfo){
     const coll = document.getElementsByClassName('time-button');
     for(let i = 0; i < coll.length; i++){
-        const time = coll[i].dataset.time;
-        coll[i].addEventListener('click', function(){
-            orderInfo.setTime(time);
-            localStorage.setItem('orderInfoTimeSlot', orderInfo.date.valueOf())
-            // localStorage.setItem('orderInfoTimeSlot', orderInfo.date.valueOf()+orderInfo.date.getTimezoneOffset())
-            window.open('./order.html', '_self');
-            // genMainPage(orderInfo);
-        });
+        if(!coll[i].classList.contains('unavail')){
+            const time = coll[i].dataset.time;
+            coll[i].addEventListener('click', function(){
+                orderInfo.setTime(time);
+                localStorage.setItem('orderInfoTimeSlot', orderInfo.date.valueOf())
+                // localStorage.setItem('orderInfoTimeSlot', orderInfo.date.valueOf()+orderInfo.date.getTimezoneOffset())
+                window.open('./order.html', '_self');
+                // genMainPage(orderInfo);
+            });
+        }
+
     }
 }
