@@ -42,14 +42,13 @@ function expandList(){
 function listServices(){
     let coll = document.getElementsByClassName('information');
     for(let i = 0; i < coll.length; i++){
-        const id = coll[i].querySelector('[class=description]').dataset.id;
         const checkbox = coll[i].querySelector('[class=real-checkbox]');
-        const priceSelector = coll[i].querySelector('[class=price]');
-        const duration = coll[i].querySelector('[class=duration]').dataset.duration;
-        const title = coll[i].querySelector('h3').innerText;
-        if (checkbox.checked){
-            console.log(getPrice(priceSelector.innerHTML))
-        }
+        checkbox.addEventListener('change', function() {
+            console.log(coll[i], 'was changed')
+        })
+        // if (checkbox.checked){
+        //     console.log(getPrice(priceSelector.innerHTML))
+        // }
     }
 
     // for(let i = 0; i < coll.length; i++){
