@@ -30,8 +30,8 @@ function expandList(){
     
     if(coll.length == 1){
         console.log(coll.length);
-        coll.classList.toggle('active');
-        let content = coll.nextElementSibling;
+        coll[0].classList.toggle('active');
+        let content = coll[0].nextElementSibling;
         if(content.style.maxHeight){
             content.style.maxHeight = null;
         }else{
