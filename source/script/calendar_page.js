@@ -12,6 +12,7 @@ orderInfo.employee = lsOrderInfoE;
 showDays(orderInfo);
 
 function showDays(orderInfo){
+    tg.MainButton.hide();
     let main = document.querySelector('main');
     // main.innerHTML = `<div class="date"></div>
     //                   <div class="time"> Выберете дату</div>`
