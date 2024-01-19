@@ -47,26 +47,26 @@ function genMainPage(orderInfo){
         })
         const order = {
             employee_id: orderInfo.employee.id, 
-            time: orderInfo.date,
+            time: new Date(orderInfo.date.getTime().valueOf()-d.getTimezoneOffset()*60000),
             services: serviceIDs
         };
         console.log("order", JSON.stringify(order));
-        fetch('./app/order', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8',
-                'Telegram-Data': tg.initData,
-              },
-              body: JSON.stringify(order)
-        })
-        .then(response => {
-            if(response.ok){
-                window.open('./info.html', '_self');
-            }else{
-                alert('Что-то пошло не так.\nПопробуйте снова.');
-                tg.close();
-            }
-        });
+        // fetch('./app/order', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json;charset=utf-8',
+        //         'Telegram-Data': tg.initData,
+        //       },
+        //       body: JSON.stringify(order)
+        // })
+        // .then(response => {
+        //     if(response.ok){
+        //         window.open('./info.html', '_self');
+        //     }else{
+        //         alert('Что-то пошло не так.\nПопробуйте снова.');
+        //         tg.close();
+        //     }
+        // });
     });
 }
 
