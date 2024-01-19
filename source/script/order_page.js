@@ -47,7 +47,7 @@ function genMainPage(orderInfo){
         })
         const order = {
             employee_id: orderInfo.employee.id, 
-            time: new Date(orderInfo.date.getTime().valueOf()-d.getTimezoneOffset()*60000),
+            time: new Date(orderInfo.date.getTime().valueOf()-orderInfo.date.getTimezoneOffset()*60000),
             services: serviceIDs
         };
         console.log("order", JSON.stringify(order));
