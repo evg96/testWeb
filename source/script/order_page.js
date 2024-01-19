@@ -50,7 +50,7 @@ function genMainPage(orderInfo){
             time: orderInfo.date,
             services: serviceIDs
         };
-
+        console.log("order", order);
         fetch('./app/order', {
             method: 'POST',
             headers: {
