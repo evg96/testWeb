@@ -13,8 +13,6 @@ showDays(orderInfo);
 
 function showDays(orderInfo){
     let main = document.querySelector('main');
-    // main.innerHTML = `<div class="date"></div>
-    //                   <div class="time"> Выберете дату</div>`
     main.innerHTML = `<div class="date_descr" style="visibility: hidden;text-align: center; padding-bottom: 5px;">25 декабря</div>
                      <div class="date"></div>
                      <div class="time"></div>
@@ -72,6 +70,7 @@ function createDayButton(today, availDates){
         const week = today.getWeek();
         const day = today.getDay();
         const dataDate = today.dateToISO().split('T')[0];
+        console.log("today", today, dataDate)
         content += `
         <div class="${btnClass}" role="button" data-date="${dataDate}">
             <div>
