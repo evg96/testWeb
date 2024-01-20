@@ -49,8 +49,7 @@ h3{
 }
 
 .collapsible{
-    /* background-color: #f6f6f6; */
-    background-color: var(--tg-theme-bg-color);
+    background-color: #f6f6f6;
     color: black;
     padding: 18px;
     width: 100%;
@@ -68,7 +67,8 @@ h3{
 .active,
 .collapsible:hover{
     /* background-color:rgb(228, 228, 238) */
-    background-color: #c9d9f5;
+    /* background-color: #c9d9f5; */
+    background-color: var(--tg-theme-bg-color);
 }
 .content{
     padding: 0 18px;
