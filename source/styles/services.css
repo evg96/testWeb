@@ -68,7 +68,7 @@ h3{
 .collapsible:hover{
     /* background-color:rgb(228, 228, 238) */
     /* background-color: #c9d9f5; */
-    background-color: var(--tg-theme-bg-color);
+    background-color: var(--tg-theme-button-color);
 }
 .content{
     padding: 0 18px;
