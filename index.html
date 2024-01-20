@@ -38,11 +38,12 @@
     </div>
     <script>
         let date = new Date;
-        console.log(date);
+        console.log(date, date.toISOString(), date.getHours());
+
         let t = date.getTime().valueOf()-date.getTimezoneOffset()*60000;
         // let t = date.getMinutes()-date.getTimezoneOffset();
         let date2 = new Date(t);
-        console.log(date2);
+        console.log(date2, date2.toISOString(), date2.getHours());
         
         // console.log(date.toISOString());
     </script>

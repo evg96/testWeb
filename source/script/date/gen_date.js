@@ -1,8 +1,8 @@
 export class CtsDate{
     constructor(){
-        const d = new Date();
-        // d.getTime().valueOf()-date.getTimezoneOffset()*60000;
-        this.date = new Date(d.getTime().valueOf()-d.getTimezoneOffset()*60000);
+        // const d = new Date();
+        this.date = new Date();
+        // this.date = new Date(d.getTime().valueOf()-d.getTimezoneOffset()*60000);
     }
     getWeek(){
         const day = this.date.getDay();
@@ -33,7 +33,9 @@ export class CtsDate{
         this.date.setDate(this.date.getDate() + 1);
     }
     dateToISO(){
-        return this.date.toISOString();
+        const d = new Date(this.date.getTime().valueOf()-this.date.getTimezoneOffset()*60000);
+        return d.toISOString();
+        // return this.date.toISOString();
     }
     compareDate(date2){
         if(this.date.getFullYear() === date2.getFullYear()){
