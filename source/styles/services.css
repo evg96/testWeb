@@ -49,7 +49,8 @@ h3{
 }
 
 .collapsible{
-    background-color: #f6f6f6;
+    /* background-color: #f6f6f6; */
+    background-color: var(--tg-theme-bg-color);
     color: black;
     padding: 18px;
     width: 100%;

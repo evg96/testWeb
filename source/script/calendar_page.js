@@ -32,7 +32,7 @@ function showDays(orderInfo){
 
 function createDays(availDates, orderInfo){ 
         let today = new CtsDate();
-        console.log("availDates", availDates);
+        // console.log("availDates", availDates);
         let content = createDayButton(today, availDates);
         let main = document.querySelector('main');
         main.innerHTML = `<div class="date_descr" style="visibility: hidden;text-align: center; padding-bottom: 5px;">25 декабря</div>
@@ -71,7 +71,7 @@ function createDayButton(today, availDates){
         const week = today.getWeek();
         const day = today.getDay();
         const dataDate = today.dateToISO().split('T')[0];
-        console.log("today", today, dataDate) /////////////////
+        // console.log("today", today, dataDate);
         content += `
         <div class="${btnClass}" role="button" data-date="${dataDate}">
             <div>
@@ -90,7 +90,7 @@ function showTime(orderInfo){
     const coll = document.getElementsByClassName('date-button');
     for(let i = 0; i < coll.length; i++){
         const date = coll[i].dataset.date;
-        console.log(date);
+        // console.log(date);
         coll[i].addEventListener('click', function(){
             let dDescr = document.querySelector('[class=date_descr]');
             let welMes = document.querySelector('[class=choose_day]');
