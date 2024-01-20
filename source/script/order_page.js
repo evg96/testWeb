@@ -37,7 +37,7 @@ function genMainPage(orderInfo){
     //     window.history.back();
     // });
     tg.MainButton.text = "Подтвердить запись";
-    tg.MainButton.color = "#3390ec";   //#91cee6
+    // tg.MainButton.color = "#3390ec";   //#91cee6
     tg.MainButton.isVisible = true;
 	tg.MainButton.show();
 
