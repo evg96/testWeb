@@ -60,7 +60,7 @@
 
 .date-button:hover{
     background-color: #196dff;
-    /* background-color: var(--tg-theme-bg-color); */
+    background-color: var(--tg-theme-button-color);
      /* --tg-theme-text-color */
 }
 

@@ -69,6 +69,7 @@ h3{
     /* background-color:rgb(228, 228, 238) */
     /* background-color: #c9d9f5; */
     background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
 }
 .content{
     padding: 0 18px;
