@@ -13,6 +13,7 @@ body, html{
 header{
     /* border-bottom: 2px solid rgb(211, 205, 214); */
     padding-top: 20px;
+    padding-bottom: 5px;
     font-size: 1.3em;
     text-align: center;
     font-weight: 500;

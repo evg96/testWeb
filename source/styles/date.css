@@ -13,13 +13,13 @@
     padding: 9px 0;
 }
 
-.time-button:hover{
-    /* background-color: rgba(218, 209, 209, 0.5); */
+/* .time-button:hover{
+    background-color: rgba(218, 209, 209, 0.5);
 }
 
 .time-button:active{
-    /* background-color: rgba(218, 209, 209, 0.7); */
-}
+    background-color: rgba(218, 209, 209, 0.7);
+} */
 
 .time{
     display: flex;
