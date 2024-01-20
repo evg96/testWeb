@@ -59,7 +59,9 @@
 } */
 
 .date-button:hover{
-    background-color: #196dff;
+    /* background-color: #196dff; */
+    background-color: var(--tg-theme-bg-color);
+     /* --tg-theme-text-color */
 }
 
 /* .date-button:visited{
